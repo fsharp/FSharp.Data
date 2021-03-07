@@ -1,0 +1,2306 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>HtmlNode (FSharp.Data)</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="FSharp.Data">
+
+    <link rel="stylesheet" id="theme_link" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.3.1/materia/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script> -->
+
+    <link type="text/css" rel="stylesheet" href="https://fsprojects.github.io/FSharp.Data/content/navbar-fixed-right.css" />
+    <link type="text/css" rel="stylesheet" href="https://fsprojects.github.io/FSharp.Data/content/fsdocs-default.css" />
+    <link type="text/css" rel="stylesheet" href="https://fsprojects.github.io/FSharp.Data/content/fsdocs-custom.css" />
+    <script type="text/javascript" src="https://fsprojects.github.io/FSharp.Data/content/fsdocs-tips.js"></script>
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!-- BEGIN SEARCH BOX: this adds support for the search box -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/JavaScript-autoComplete/1.0.4/auto-complete.css" />
+    <!-- END SEARCH BOX: this adds support for the search box -->
+    
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-md navbar-light bg-secondary fixed-right" id="fsdocs-menu">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <a href="https://fsprojects.github.io/FSharp.Data/"><img id="fsdocs-logo" src="https://fsprojects.github.io/FSharp.Data/img/logo.png" /></a>
+            <!-- BEGIN SEARCH BOX: this adds support for the search box -->
+            <div id="header">
+                <div class="searchbox" id="fsdocs-searchbox">
+                    <label for="search-by">
+                        <i class="fas fa-search"></i>
+                    </label>
+                    <input data-search-input="" id="search-by" type="search" placeholder="Search..." />
+                    <span data-search-clear="">
+                        <i class="fas fa-times"></i>
+                    </span>
+                </div>
+            </div>
+
+            <!-- END SEARCH BOX: this adds support for the search box -->
+            <ul class="navbar-nav">
+                <li class="nav-header">Links</li>
+                <li class="nav-item" id="fsdocs-license-link"><a class="nav-link" href="https://github.com/fsprojects/FSharp.Data/blob/master/LICENSE.md">License (Apache 2.0)</a></li>
+                <li class="nav-item" id="fsdocs-release-notes-link"><a class="nav-link" href="https://github.com/fsprojects/FSharp.Data/blob/master/RELEASE_NOTES.md">Release Notes</a></li>
+                <li class="nav-item" id="fsdocs-repository-link"><a class="nav-link" href="https://github.com/fsprojects/FSharp.Data/">Source Repository</a></li>
+                <li class="nav-header">
+  Documentation
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="https://fsprojects.github.io/FSharp.Data/library/CsvFile.html">
+    CSV Parser
+
+  </a>
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="https://fsprojects.github.io/FSharp.Data/library/CsvProvider.html">
+    CSV Type Provider
+
+  </a>
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="https://fsprojects.github.io/FSharp.Data/library/HtmlCssSelectors.html">
+    HTML CSS selectors
+
+  </a>
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="https://fsprojects.github.io/FSharp.Data/library/HtmlParser.html">
+    HTML Parser
+
+  </a>
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="https://fsprojects.github.io/FSharp.Data/library/HtmlProvider.html">
+    HTML Type Provider
+
+  </a>
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="https://fsprojects.github.io/FSharp.Data/library/Http.html">
+    HTTP Utilities
+
+  </a>
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="https://fsprojects.github.io/FSharp.Data/library/JsonProvider.html">
+    JSON Type Provider
+
+  </a>
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="https://fsprojects.github.io/FSharp.Data/library/JsonValue.html">
+    JSON Parser
+
+  </a>
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="https://fsprojects.github.io/FSharp.Data/library/WorldBank.html">
+    WorldBank Provider
+
+  </a>
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="https://fsprojects.github.io/FSharp.Data/library/XmlProvider.html">
+    XML Type Provider
+
+  </a>
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="https://fsprojects.github.io/FSharp.Data/tutorials/JsonAnonymizer.html">
+    Anonymizing JSON
+
+  </a>
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="https://fsprojects.github.io/FSharp.Data/tutorials/JsonToXml.html">
+    Converting between JSON and XML
+
+  </a>
+</li>
+                <li class="nav-header">
+  API Reference
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="https://fsprojects.github.io/FSharp.Data/reference/index.html">
+    All Namespaces
+  </a>
+</li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="masthead">
+            <h3 class="muted"><a href="https://fsprojects.github.io/FSharp.Data/">FSharp.Data</a></h3>
+        </div>
+        <hr />
+        <div class="container" id="fsdocs-content">
+            <div>
+  <h1>
+    HtmlNode Module
+  </h1>
+  <p>
+    Namespace: 
+    <a href="https://fsprojects.github.io/FSharp.Data/reference/fsharp-data.html">
+      FSharp.Data
+    </a>
+  </p>
+  <p>
+    Assembly: FSharp.Data.dll
+  </p>
+  <div class="fsdocs-xmldoc">
+    
+ Module with operations on HTML nodes
+
+  </div>
+  <div>
+    <h3>
+      Functions and values
+    </h3>
+    <table class="table outer-list fsdocs-member-list">
+      <thead>
+        <tr>
+          <td class="fsdocs-member-list-header">
+            Function or value
+          </td>
+          <td class="fsdocs-member-list-header">
+            Description
+          </td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="fsdocs-member-name">
+            <div>
+              <code onmouseout="hideTip(event, '18', 18)" onmouseover="showTip(event, '18', 18)">
+                <p>
+                  <a id="attribute">
+                    <a href="#attribute">
+                      <code><span>attribute&#32;<span>name&#32;n</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="18">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>attribute&#32;<span>name&#32;n</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        name
+                      </b>
+                      :
+                      <code>string</code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        n
+                      </b>
+                      :
+                      <code><a href="https://fsprojects.github.io/FSharp.Data/reference/fsharp-data-htmlnode.html">HtmlNode</a></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><a href="https://fsprojects.github.io/FSharp.Data/reference/fsharp-data-htmlattribute.html">HtmlAttribute</a></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class="fsdocs-summary">
+              <a href="https://github.com/fsprojects/FSharp.Data/tree/master/src/Html/HtmlOperations.fs#L186-186" class="fsdocs-source-link">
+                <img src="https://fsprojects.github.io/FSharp.Data/content/img/github.png" class="normal"/>
+                <img src="https://fsprojects.github.io/FSharp.Data/content/img/github-blue.png" class="hover"/>
+              </a>
+              
+ Returns the attribute with the given name. If the
+ attribute does not exist then this will throw an exception
+ Parameters:
+ * name - The name of the attribute to select
+ * n - The given node
+
+            </p>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  name
+                </span>
+                :
+                <code>string</code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  n
+                </span>
+                :
+                <code><a href="https://fsprojects.github.io/FSharp.Data/reference/fsharp-data-htmlnode.html">HtmlNode</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns:
+                </span>
+                <code><a href="https://fsprojects.github.io/FSharp.Data/reference/fsharp-data-htmlattribute.html">HtmlAttribute</a></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name">
+            <div>
+              <code onmouseout="hideTip(event, '19', 19)" onmouseover="showTip(event, '19', 19)">
+                <p>
+                  <a id="attributeValue">
+                    <a href="#attributeValue">
+                      <code><span>attributeValue&#32;<span>name&#32;n</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="19">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>attributeValue&#32;<span>name&#32;n</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        name
+                      </b>
+                      :
+                      <code>string</code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        n
+                      </b>
+                      :
+                      <code><a href="https://fsprojects.github.io/FSharp.Data/reference/fsharp-data-htmlnode.html">HtmlNode</a></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code>string</code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class="fsdocs-summary">
+              <a href="https://github.com/fsprojects/FSharp.Data/tree/master/src/Html/HtmlOperations.fs#L195-195" class="fsdocs-source-link">
+                <img src="https://fsprojects.github.io/FSharp.Data/content/img/github.png" class="normal"/>
+                <img src="https://fsprojects.github.io/FSharp.Data/content/img/github-blue.png" class="hover"/>
+              </a>
+              
+ Return the value of the named attribute, or an empty string if not found.
+ Parameters:
+ * name - The name of the attribute to get the value from
+ * n - The given node
+
+            </p>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  name
+                </span>
+                :
+                <code>string</code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  n
+                </span>
+                :
+                <code><a href="https://fsprojects.github.io/FSharp.Data/reference/fsharp-data-htmlnode.html">HtmlNode</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns:
+                </span>
+                <code>string</code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name">
+            <div>
+              <code onmouseout="hideTip(event, '20', 20)" onmouseover="showTip(event, '20', 20)">
+                <p>
+                  <a id="attributes">
+                    <a href="#attributes">
+                      <code><span>attributes&#32;<span>n</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="20">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>attributes&#32;<span>n</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        n
+                      </b>
+                      :
+                      <code><a href="https://fsprojects.github.io/FSharp.Data/reference/fsharp-data-htmlnode.html">HtmlNode</a></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="https://fsprojects.github.io/FSharp.Data/reference/fsharp-data-htmlattribute.html">HtmlAttribute</a>&#32;list</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class="fsdocs-summary">
+              <a href="https://github.com/fsprojects/FSharp.Data/tree/master/src/Html/HtmlOperations.fs#L170-170" class="fsdocs-source-link">
+                <img src="https://fsprojects.github.io/FSharp.Data/content/img/github.png" class="normal"/>
+                <img src="https://fsprojects.github.io/FSharp.Data/content/img/github-blue.png" class="hover"/>
+              </a>
+              
+ Gets all of the attributes of this node
+
+            </p>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  n
+                </span>
+                :
+                <code><a href="https://fsprojects.github.io/FSharp.Data/reference/fsharp-data-htmlnode.html">HtmlNode</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns:
+                </span>
+                <code><span><a href="https://fsprojects.github.io/FSharp.Data/reference/fsharp-data-htmlattribute.html">HtmlAttribute</a>&#32;list</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name">
+            <div>
+              <code onmouseout="hideTip(event, '21', 21)" onmouseover="showTip(event, '21', 21)">
+                <p>
+                  <a id="cssSelect">
+                    <a href="#cssSelect">
+                      <code><span>cssSelect&#32;<span>node&#32;selector</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="21">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>cssSelect&#32;<span>node&#32;selector</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        node
+                      </b>
+                      :
+                      <code><a href="https://fsprojects.github.io/FSharp.Data/reference/fsharp-data-htmlnode.html">HtmlNode</a></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        selector
+                      </b>
+                      :
+                      <code>string</code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="https://fsprojects.github.io/FSharp.Data/reference/fsharp-data-htmlnode.html">HtmlNode</a>&#32;list</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class="fsdocs-summary">
+              <a href="https://github.com/fsprojects/FSharp.Data/tree/master/src/Html/HtmlOperations.fs#L438-438" class="fsdocs-source-link">
+                <img src="https://fsprojects.github.io/FSharp.Data/content/img/github.png" class="normal"/>
+                <img src="https://fsprojects.github.io/FSharp.Data/content/img/github-blue.png" class="hover"/>
+              </a>
+              
+ Gets descendants matched by Css selector
+
+            </p>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  node
+                </span>
+                :
+                <code><a href="https://fsprojects.github.io/FSharp.Data/reference/fsharp-data-htmlnode.html">HtmlNode</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  selector
+                </span>
+                :
+                <code>string</code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns:
+                </span>
+                <code><span><a href="https://fsprojects.github.io/FSharp.Data/reference/fsharp-data-htmlnode.html">HtmlNode</a>&#32;list</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name">
+            <div>
+              <code onmouseout="hideTip(event, '22', 22)" onmouseover="showTip(event, '22', 22)">
+                <p>
+                  <a id="descendants">
+                    <a href="#descendants">
+                      <code><span>descendants&#32;<span>recurseOnMatch&#32;predicate&#32;n</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="22">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>descendants&#32;<span>recurseOnMatch&#32;predicate&#32;n</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        recurseOnMatch
+                      </b>
+                      :
+                      <code>bool</code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        predicate
+                      </b>
+                      :
+                      <code><span><a href="https://fsprojects.github.io/FSharp.Data/reference/fsharp-data-htmlnode.html">HtmlNode</a>&#32;->&#32;bool</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        n
+                      </b>
+                      :
+                      <code><a href="https://fsprojects.github.io/FSharp.Data/reference/fsharp-data-htmlnode.html">HtmlNode</a></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span>seq&lt;<a href="https://fsprojects.github.io/FSharp.Data/reference/fsharp-data-htmlnode.html">HtmlNode</a>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class="fsdocs-summary">
+              <a href="https://github.com/fsprojects/FSharp.Data/tree/master/src/Html/HtmlOperations.fs#L89-89" class="fsdocs-source-link">
+                <img src="https://fsprojects.github.io/FSharp.Data/content/img/github.png" class="normal"/>
+                <img src="https://fsprojects.github.io/FSharp.Data/content/img/github-blue.png" class="hover"/>
+              </a>
+              
+ Gets all of the descendants of this node that statisfy the given predicate
+ Parameters:
+ * recurseOnMatch - If a match is found continues down the tree matching child elements
+ * predicate - The predicate by which to match the nodes to return
+ * n - The given node
+
+            </p>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  recurseOnMatch
+                </span>
+                :
+                <code>bool</code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  predicate
+                </span>
+                :
+                <code><span><a href="https://fsprojects.github.io/FSharp.Data/reference/fsharp-data-htmlnode.html">HtmlNode</a>&#32;->&#32;bool</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  n
+                </span>
+                :
+                <code><a href="https://fsprojects.github.io/FSharp.Data/reference/fsharp-data-htmlnode.html">HtmlNode</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns:
+                </span>
+                <code><span>seq&lt;<a href="https://fsprojects.github.io/FSharp.Data/reference/fsharp-data-htmlnode.html">HtmlNode</a>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name">
+            <div>
+              <code onmouseout="hideTip(event, '23', 23)" onmouseover="showTip(event, '23', 23)">
+                <p>
+                  <a id="descendantsAndSelf">
+                    <a href="#descendantsAndSelf">
+                      <code><span>descendantsAndSelf&#32;<span>recurseOnMatch&#32;predicate&#32;n</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="23">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>descendantsAndSelf&#32;<span>recurseOnMatch&#32;predicate&#32;n</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        recurseOnMatch
+                      </b>
+                      :
+                      <code>bool</code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        predicate
+                      </b>
+                      :
+                      <code><span><a href="https://fsprojects.github.io/FSharp.Data/reference/fsharp-data-htmlnode.html">HtmlNode</a>&#32;->&#32;bool</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        n
+                      </b>
+                      :
+                      <code><a href="https://fsprojects.github.io/FSharp.Data/reference/fsharp-data-htmlnode.html">HtmlNode</a></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span>seq&lt;<a href="https://fsprojects.github.io/FSharp.Data/reference/fsharp-data-htmlnode.html">HtmlNode</a>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class="fsdocs-summary">
+              <a href="https://github.com/fsprojects/FSharp.Data/tree/master/src/Html/HtmlOperations.fs#L98-98" class="fsdocs-source-link">
+                <img src="https://fsprojects.github.io/FSharp.Data/content/img/github.png" class="normal"/>
+                <img src="https://fsprojects.github.io/FSharp.Data/content/img/github-blue.png" class="hover"/>
+              </a>
+              
+ Gets all of the descendants of this node that statisfy the given predicate
+ The current node is also considered in the comparison
+ Parameters:
+ * recurseOnMatch - If a match is found continues down the tree matching child elements
+ * predicate - The predicate by which to match the nodes to return
+ * n - The given node
+
+            </p>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  recurseOnMatch
+                </span>
+                :
+                <code>bool</code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  predicate
+                </span>
+                :
+                <code><span><a href="https://fsprojects.github.io/FSharp.Data/reference/fsharp-data-htmlnode.html">HtmlNode</a>&#32;->&#32;bool</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  n
+                </span>
+                :
+                <code><a href="https://fsprojects.github.io/FSharp.Data/reference/fsharp-data-htmlnode.html">HtmlNode</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns:
+                </span>
+                <code><span>seq&lt;<a href="https://fsprojects.github.io/FSharp.Data/reference/fsharp-data-htmlnode.html">HtmlNode</a>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name">
+            <div>
+              <code onmouseout="hideTip(event, '24', 24)" onmouseover="showTip(event, '24', 24)">
+                <p>
+                  <a id="descendantsAndSelfNamed">
+                    <a href="#descendantsAndSelfNamed">
+                      <code><span>descendantsAndSelfNamed&#32;<span>recurseOnMatch&#32;names&#32;n</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="24">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>descendantsAndSelfNamed&#32;<span>recurseOnMatch&#32;names&#32;n</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        recurseOnMatch
+                      </b>
+                      :
+                      <code>bool</code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        names
+                      </b>
+                      :
+                      <code><span>seq&lt;string&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        n
+                      </b>
+                      :
+                      <code><a href="https://fsprojects.github.io/FSharp.Data/reference/fsharp-data-htmlnode.html">HtmlNode</a></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span>seq&lt;<a href="https://fsprojects.github.io/FSharp.Data/reference/fsharp-data-htmlnode.html">HtmlNode</a>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class="fsdocs-summary">
+              <a href="https://github.com/fsprojects/FSharp.Data/tree/master/src/Html/HtmlOperations.fs#L116-116" class="fsdocs-source-link">
+                <img src="https://fsprojects.github.io/FSharp.Data/content/img/github.png" class="normal"/>
+                <img src="https://fsprojects.github.io/FSharp.Data/content/img/github-blue.png" class="hover"/>
+              </a>
+              
+ Finds all of the descendant nodes of this nodes that match the given set of names
+ The current node is also considered in the comparison
+ Parameters:
+ * recurseOnMatch - If a match is found continues down the tree matching child elements
+ * names - The set of names to match
+ * n - The given node
+
+            </p>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  recurseOnMatch
+                </span>
+                :
+                <code>bool</code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  names
+                </span>
+                :
+                <code><span>seq&lt;string&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  n
+                </span>
+                :
+                <code><a href="https://fsprojects.github.io/FSharp.Data/reference/fsharp-data-htmlnode.html">HtmlNode</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns:
+                </span>
+                <code><span>seq&lt;<a href="https://fsprojects.github.io/FSharp.Data/reference/fsharp-data-htmlnode.html">HtmlNode</a>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name">
+            <div>
+              <code onmouseout="hideTip(event, '25', 25)" onmouseover="showTip(event, '25', 25)">
+                <p>
+                  <a id="descendantsAndSelfNamedWithPath">
+                    <a href="#descendantsAndSelfNamedWithPath">
+                      <code><span>descendantsAndSelfNamedWithPath&#32;<span>recurseOnMatch&#32;names&#32;n</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="25">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>descendantsAndSelfNamedWithPath&#32;<span>recurseOnMatch&#32;names&#32;n</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        recurseOnMatch
+                      </b>
+                      :
+                      <code>bool</code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        names
+                      </b>
+                      :
+                      <code><span>seq&lt;string&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        n
+                      </b>
+                      :
+                      <code><a href="https://fsprojects.github.io/FSharp.Data/reference/fsharp-data-htmlnode.html">HtmlNode</a></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span>seq&lt;<span><a href="https://fsprojects.github.io/FSharp.Data/reference/fsharp-data-htmlnode.html">HtmlNode</a>&#32;*&#32;<span><a href="https://fsprojects.github.io/FSharp.Data/reference/fsharp-data-htmlnode.html">HtmlNode</a>&#32;list</span></span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class="fsdocs-summary">
+              <a href="https://github.com/fsprojects/FSharp.Data/tree/master/src/Html/HtmlOperations.fs#L165-165" class="fsdocs-source-link">
+                <img src="https://fsprojects.github.io/FSharp.Data/content/img/github.png" class="normal"/>
+                <img src="https://fsprojects.github.io/FSharp.Data/content/img/github-blue.png" class="hover"/>
+              </a>
+              
+ Finds all of the descendant nodes of this nodes that match the given set of names
+ The current node is also considered in the comparison
+ Parameters:
+ * recurseOnMatch - If a match is found continues down the tree matching child elements
+ * names - The set of names to match
+ * n - The given node
+
+            </p>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  recurseOnMatch
+                </span>
+                :
+                <code>bool</code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  names
+                </span>
+                :
+                <code><span>seq&lt;string&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  n
+                </span>
+                :
+                <code><a href="https://fsprojects.github.io/FSharp.Data/reference/fsharp-data-htmlnode.html">HtmlNode</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns:
+                </span>
+                <code><span>seq&lt;<span><a href="https://fsprojects.github.io/FSharp.Data/reference/fsharp-data-htmlnode.html">HtmlNode</a>&#32;*&#32;<span><a href="https://fsprojects.github.io/FSharp.Data/reference/fsharp-data-htmlnode.html">HtmlNode</a>&#32;list</span></span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name">
+            <div>
+              <code onmouseout="hideTip(event, '26', 26)" onmouseover="showTip(event, '26', 26)">
+                <p>
+                  <a id="descendantsAndSelfWithPath">
+                    <a href="#descendantsAndSelfWithPath">
+                      <code><span>descendantsAndSelfWithPath&#32;<span>recurseOnMatch&#32;predicate&#32;n</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="26">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>descendantsAndSelfWithPath&#32;<span>recurseOnMatch&#32;predicate&#32;n</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        recurseOnMatch
+                      </b>
+                      :
+                      <code>bool</code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        predicate
+                      </b>
+                      :
+                      <code><span><a href="https://fsprojects.github.io/FSharp.Data/reference/fsharp-data-htmlnode.html">HtmlNode</a>&#32;->&#32;bool</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        n
+                      </b>
+                      :
+                      <code><a href="https://fsprojects.github.io/FSharp.Data/reference/fsharp-data-htmlnode.html">HtmlNode</a></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span>seq&lt;<span><a href="https://fsprojects.github.io/FSharp.Data/reference/fsharp-data-htmlnode.html">HtmlNode</a>&#32;*&#32;<span><a href="https://fsprojects.github.io/FSharp.Data/reference/fsharp-data-htmlnode.html">HtmlNode</a>&#32;list</span></span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class="fsdocs-summary">
+              <a href="https://github.com/fsprojects/FSharp.Data/tree/master/src/Html/HtmlOperations.fs#L147-147" class="fsdocs-source-link">
+                <img src="https://fsprojects.github.io/FSharp.Data/content/img/github.png" class="normal"/>
+                <img src="https://fsprojects.github.io/FSharp.Data/content/img/github-blue.png" class="hover"/>
+              </a>
+              
+ Gets all of the descendants of this node that statisfy the given predicate
+ The current node is also considered in the comparison
+ Parameters:
+ * recurseOnMatch - If a match is found continues down the tree matching child elements
+ * predicate - The predicate by which to match the nodes to return
+ * n - The given node
+
+            </p>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  recurseOnMatch
+                </span>
+                :
+                <code>bool</code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  predicate
+                </span>
+                :
+                <code><span><a href="https://fsprojects.github.io/FSharp.Data/reference/fsharp-data-htmlnode.html">HtmlNode</a>&#32;->&#32;bool</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  n
+                </span>
+                :
+                <code><a href="https://fsprojects.github.io/FSharp.Data/reference/fsharp-data-htmlnode.html">HtmlNode</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns:
+                </span>
+                <code><span>seq&lt;<span><a href="https://fsprojects.github.io/FSharp.Data/reference/fsharp-data-htmlnode.html">HtmlNode</a>&#32;*&#32;<span><a href="https://fsprojects.github.io/FSharp.Data/reference/fsharp-data-htmlnode.html">HtmlNode</a>&#32;list</span></span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name">
+            <div>
+              <code onmouseout="hideTip(event, '27', 27)" onmouseover="showTip(event, '27', 27)">
+                <p>
+                  <a id="descendantsNamed">
+                    <a href="#descendantsNamed">
+                      <code><span>descendantsNamed&#32;<span>recurseOnMatch&#32;names&#32;n</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="27">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>descendantsNamed&#32;<span>recurseOnMatch&#32;names&#32;n</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        recurseOnMatch
+                      </b>
+                      :
+                      <code>bool</code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        names
+                      </b>
+                      :
+                      <code><span>seq&lt;string&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        n
+                      </b>
+                      :
+                      <code><a href="https://fsprojects.github.io/FSharp.Data/reference/fsharp-data-htmlnode.html">HtmlNode</a></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span>seq&lt;<a href="https://fsprojects.github.io/FSharp.Data/reference/fsharp-data-htmlnode.html">HtmlNode</a>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class="fsdocs-summary">
+              <a href="https://github.com/fsprojects/FSharp.Data/tree/master/src/Html/HtmlOperations.fs#L106-106" class="fsdocs-source-link">
+                <img src="https://fsprojects.github.io/FSharp.Data/content/img/github.png" class="normal"/>
+                <img src="https://fsprojects.github.io/FSharp.Data/content/img/github-blue.png" class="hover"/>
+              </a>
+              
+ Finds all of the descendant nodes of this nodes that match the given set of names
+ Parameters:
+ * recurseOnMatch - If a match is found continues down the tree matching child elements
+ * names - The set of names to match
+ * n - The given node
+
+            </p>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  recurseOnMatch
+                </span>
+                :
+                <code>bool</code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  names
+                </span>
+                :
+                <code><span>seq&lt;string&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  n
+                </span>
+                :
+                <code><a href="https://fsprojects.github.io/FSharp.Data/reference/fsharp-data-htmlnode.html">HtmlNode</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns:
+                </span>
+                <code><span>seq&lt;<a href="https://fsprojects.github.io/FSharp.Data/reference/fsharp-data-htmlnode.html">HtmlNode</a>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name">
+            <div>
+              <code onmouseout="hideTip(event, '28', 28)" onmouseover="showTip(event, '28', 28)">
+                <p>
+                  <a id="descendantsNamedWithPath">
+                    <a href="#descendantsNamedWithPath">
+                      <code><span>descendantsNamedWithPath&#32;<span>recurseOnMatch&#32;names&#32;n</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="28">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>descendantsNamedWithPath&#32;<span>recurseOnMatch&#32;names&#32;n</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        recurseOnMatch
+                      </b>
+                      :
+                      <code>bool</code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        names
+                      </b>
+                      :
+                      <code><span>seq&lt;string&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        n
+                      </b>
+                      :
+                      <code><a href="https://fsprojects.github.io/FSharp.Data/reference/fsharp-data-htmlnode.html">HtmlNode</a></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span>seq&lt;<span><a href="https://fsprojects.github.io/FSharp.Data/reference/fsharp-data-htmlnode.html">HtmlNode</a>&#32;*&#32;<span><a href="https://fsprojects.github.io/FSharp.Data/reference/fsharp-data-htmlnode.html">HtmlNode</a>&#32;list</span></span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class="fsdocs-summary">
+              <a href="https://github.com/fsprojects/FSharp.Data/tree/master/src/Html/HtmlOperations.fs#L155-155" class="fsdocs-source-link">
+                <img src="https://fsprojects.github.io/FSharp.Data/content/img/github.png" class="normal"/>
+                <img src="https://fsprojects.github.io/FSharp.Data/content/img/github-blue.png" class="hover"/>
+              </a>
+              
+ Finds all of the descendant nodes of this nodes that match the given set of names
+ Parameters:
+ * recurseOnMatch - If a match is found continues down the tree matching child elements
+ * names - The set of names to match
+ * n - The given node
+
+            </p>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  recurseOnMatch
+                </span>
+                :
+                <code>bool</code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  names
+                </span>
+                :
+                <code><span>seq&lt;string&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  n
+                </span>
+                :
+                <code><a href="https://fsprojects.github.io/FSharp.Data/reference/fsharp-data-htmlnode.html">HtmlNode</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns:
+                </span>
+                <code><span>seq&lt;<span><a href="https://fsprojects.github.io/FSharp.Data/reference/fsharp-data-htmlnode.html">HtmlNode</a>&#32;*&#32;<span><a href="https://fsprojects.github.io/FSharp.Data/reference/fsharp-data-htmlnode.html">HtmlNode</a>&#32;list</span></span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name">
+            <div>
+              <code onmouseout="hideTip(event, '29', 29)" onmouseover="showTip(event, '29', 29)">
+                <p>
+                  <a id="descendantsWithPath">
+                    <a href="#descendantsWithPath">
+                      <code><span>descendantsWithPath&#32;<span>recurseOnMatch&#32;predicate&#32;n</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="29">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>descendantsWithPath&#32;<span>recurseOnMatch&#32;predicate&#32;n</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        recurseOnMatch
+                      </b>
+                      :
+                      <code>bool</code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        predicate
+                      </b>
+                      :
+                      <code><span><a href="https://fsprojects.github.io/FSharp.Data/reference/fsharp-data-htmlnode.html">HtmlNode</a>&#32;->&#32;bool</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        n
+                      </b>
+                      :
+                      <code><a href="https://fsprojects.github.io/FSharp.Data/reference/fsharp-data-htmlnode.html">HtmlNode</a></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span>seq&lt;<span><a href="https://fsprojects.github.io/FSharp.Data/reference/fsharp-data-htmlnode.html">HtmlNode</a>&#32;*&#32;<span><a href="https://fsprojects.github.io/FSharp.Data/reference/fsharp-data-htmlnode.html">HtmlNode</a>&#32;list</span></span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class="fsdocs-summary">
+              <a href="https://github.com/fsprojects/FSharp.Data/tree/master/src/Html/HtmlOperations.fs#L138-138" class="fsdocs-source-link">
+                <img src="https://fsprojects.github.io/FSharp.Data/content/img/github.png" class="normal"/>
+                <img src="https://fsprojects.github.io/FSharp.Data/content/img/github-blue.png" class="hover"/>
+              </a>
+              
+ Gets all of the descendants of this node that statisfy the given predicate
+ Parameters:
+ * recurseOnMatch - If a match is found continues down the tree matching child elements
+ * predicate - The predicate by which to match the nodes to return
+ * n - The given node
+
+            </p>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  recurseOnMatch
+                </span>
+                :
+                <code>bool</code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  predicate
+                </span>
+                :
+                <code><span><a href="https://fsprojects.github.io/FSharp.Data/reference/fsharp-data-htmlnode.html">HtmlNode</a>&#32;->&#32;bool</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  n
+                </span>
+                :
+                <code><a href="https://fsprojects.github.io/FSharp.Data/reference/fsharp-data-htmlnode.html">HtmlNode</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns:
+                </span>
+                <code><span>seq&lt;<span><a href="https://fsprojects.github.io/FSharp.Data/reference/fsharp-data-htmlnode.html">HtmlNode</a>&#32;*&#32;<span><a href="https://fsprojects.github.io/FSharp.Data/reference/fsharp-data-htmlnode.html">HtmlNode</a>&#32;list</span></span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name">
+            <div>
+              <code onmouseout="hideTip(event, '30', 30)" onmouseover="showTip(event, '30', 30)">
+                <p>
+                  <a id="directInnerText">
+                    <a href="#directInnerText">
+                      <code><span>directInnerText&#32;<span>n</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="30">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>directInnerText&#32;<span>n</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        n
+                      </b>
+                      :
+                      <code><a href="https://fsprojects.github.io/FSharp.Data/reference/fsharp-data-htmlnode.html">HtmlNode</a></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code>string</code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class="fsdocs-summary">
+              <a href="https://github.com/fsprojects/FSharp.Data/tree/master/src/Html/HtmlOperations.fs#L262-262" class="fsdocs-source-link">
+                <img src="https://fsprojects.github.io/FSharp.Data/content/img/github.png" class="normal"/>
+                <img src="https://fsprojects.github.io/FSharp.Data/content/img/github-blue.png" class="hover"/>
+              </a>
+              
+ Returns the direct inner text of the current node
+ Parameters:
+ * n - The given node
+
+            </p>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  n
+                </span>
+                :
+                <code><a href="https://fsprojects.github.io/FSharp.Data/reference/fsharp-data-htmlnode.html">HtmlNode</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns:
+                </span>
+                <code>string</code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name">
+            <div>
+              <code onmouseout="hideTip(event, '31', 31)" onmouseover="showTip(event, '31', 31)">
+                <p>
+                  <a id="elements">
+                    <a href="#elements">
+                      <code><span>elements&#32;<span>n</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="31">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>elements&#32;<span>n</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        n
+                      </b>
+                      :
+                      <code><a href="https://fsprojects.github.io/FSharp.Data/reference/fsharp-data-htmlnode.html">HtmlNode</a></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="https://fsprojects.github.io/FSharp.Data/reference/fsharp-data-htmlnode.html">HtmlNode</a>&#32;list</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class="fsdocs-summary">
+              <a href="https://github.com/fsprojects/FSharp.Data/tree/master/src/Html/HtmlOperations.fs#L58-58" class="fsdocs-source-link">
+                <img src="https://fsprojects.github.io/FSharp.Data/content/img/github.png" class="normal"/>
+                <img src="https://fsprojects.github.io/FSharp.Data/content/img/github-blue.png" class="hover"/>
+              </a>
+              
+ Gets all of the nodes immediately under this node
+
+            </p>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  n
+                </span>
+                :
+                <code><a href="https://fsprojects.github.io/FSharp.Data/reference/fsharp-data-htmlnode.html">HtmlNode</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns:
+                </span>
+                <code><span><a href="https://fsprojects.github.io/FSharp.Data/reference/fsharp-data-htmlnode.html">HtmlNode</a>&#32;list</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name">
+            <div>
+              <code onmouseout="hideTip(event, '32', 32)" onmouseover="showTip(event, '32', 32)">
+                <p>
+                  <a id="elementsNamed">
+                    <a href="#elementsNamed">
+                      <code><span>elementsNamed&#32;<span>names&#32;n</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="32">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>elementsNamed&#32;<span>names&#32;n</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        names
+                      </b>
+                      :
+                      <code><span>seq&lt;string&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        n
+                      </b>
+                      :
+                      <code><a href="https://fsprojects.github.io/FSharp.Data/reference/fsharp-data-htmlnode.html">HtmlNode</a></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="https://fsprojects.github.io/FSharp.Data/reference/fsharp-data-htmlnode.html">HtmlNode</a>&#32;list</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class="fsdocs-summary">
+              <a href="https://github.com/fsprojects/FSharp.Data/tree/master/src/Html/HtmlOperations.fs#L67-67" class="fsdocs-source-link">
+                <img src="https://fsprojects.github.io/FSharp.Data/content/img/github.png" class="normal"/>
+                <img src="https://fsprojects.github.io/FSharp.Data/content/img/github-blue.png" class="hover"/>
+              </a>
+              
+ Finds all of the elements nodes of this node that match the given set of names
+ Parameters:
+  * names - The set of names to match
+  * n - The given node
+
+            </p>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  names
+                </span>
+                :
+                <code><span>seq&lt;string&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  n
+                </span>
+                :
+                <code><a href="https://fsprojects.github.io/FSharp.Data/reference/fsharp-data-htmlnode.html">HtmlNode</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns:
+                </span>
+                <code><span><a href="https://fsprojects.github.io/FSharp.Data/reference/fsharp-data-htmlnode.html">HtmlNode</a>&#32;list</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name">
+            <div>
+              <code onmouseout="hideTip(event, '33', 33)" onmouseover="showTip(event, '33', 33)">
+                <p>
+                  <a id="hasAttribute">
+                    <a href="#hasAttribute">
+                      <code><span>hasAttribute&#32;<span>name&#32;value&#32;n</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="33">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>hasAttribute&#32;<span>name&#32;value&#32;n</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        name
+                      </b>
+                      :
+                      <code>string</code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        value
+                      </b>
+                      :
+                      <code>string</code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        n
+                      </b>
+                      :
+                      <code><a href="https://fsprojects.github.io/FSharp.Data/reference/fsharp-data-htmlnode.html">HtmlNode</a></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code>bool</code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class="fsdocs-summary">
+              <a href="https://github.com/fsprojects/FSharp.Data/tree/master/src/Html/HtmlOperations.fs#L204-204" class="fsdocs-source-link">
+                <img src="https://fsprojects.github.io/FSharp.Data/content/img/github.png" class="normal"/>
+                <img src="https://fsprojects.github.io/FSharp.Data/content/img/github-blue.png" class="hover"/>
+              </a>
+              
+ Returns true if the current node has an attribute that
+ matches both the name and the value
+ Parameters:
+ * name - The name of the attribute
+ * value - The value of the attribute
+ * x - The given html node
+
+            </p>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  name
+                </span>
+                :
+                <code>string</code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  value
+                </span>
+                :
+                <code>string</code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  n
+                </span>
+                :
+                <code><a href="https://fsprojects.github.io/FSharp.Data/reference/fsharp-data-htmlnode.html">HtmlNode</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns:
+                </span>
+                <code>bool</code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name">
+            <div>
+              <code onmouseout="hideTip(event, '34', 34)" onmouseover="showTip(event, '34', 34)">
+                <p>
+                  <a id="hasClass">
+                    <a href="#hasClass">
+                      <code><span>hasClass&#32;<span>cssClass&#32;n</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="34">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>hasClass&#32;<span>cssClass&#32;n</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        cssClass
+                      </b>
+                      :
+                      <code>string</code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        n
+                      </b>
+                      :
+                      <code><a href="https://fsprojects.github.io/FSharp.Data/reference/fsharp-data-htmlnode.html">HtmlNode</a></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code>bool</code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class="fsdocs-summary">
+              <a href="https://github.com/fsprojects/FSharp.Data/tree/master/src/Html/HtmlOperations.fs#L218-218" class="fsdocs-source-link">
+                <img src="https://fsprojects.github.io/FSharp.Data/content/img/github.png" class="normal"/>
+                <img src="https://fsprojects.github.io/FSharp.Data/content/img/github-blue.png" class="hover"/>
+              </a>
+              
+ Returns true if the current node has the specified class
+
+            </p>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  cssClass
+                </span>
+                :
+                <code>string</code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  n
+                </span>
+                :
+                <code><a href="https://fsprojects.github.io/FSharp.Data/reference/fsharp-data-htmlnode.html">HtmlNode</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns:
+                </span>
+                <code>bool</code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name">
+            <div>
+              <code onmouseout="hideTip(event, '35', 35)" onmouseover="showTip(event, '35', 35)">
+                <p>
+                  <a id="hasId">
+                    <a href="#hasId">
+                      <code><span>hasId&#32;<span>id&#32;n</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="35">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>hasId&#32;<span>id&#32;n</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        id
+                      </b>
+                      :
+                      <code>string</code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        n
+                      </b>
+                      :
+                      <code><a href="https://fsprojects.github.io/FSharp.Data/reference/fsharp-data-htmlnode.html">HtmlNode</a></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code>bool</code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class="fsdocs-summary">
+              <a href="https://github.com/fsprojects/FSharp.Data/tree/master/src/Html/HtmlOperations.fs#L214-214" class="fsdocs-source-link">
+                <img src="https://fsprojects.github.io/FSharp.Data/content/img/github.png" class="normal"/>
+                <img src="https://fsprojects.github.io/FSharp.Data/content/img/github-blue.png" class="hover"/>
+              </a>
+              
+ Returns true if the current node has the specified id
+
+            </p>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  id
+                </span>
+                :
+                <code>string</code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  n
+                </span>
+                :
+                <code><a href="https://fsprojects.github.io/FSharp.Data/reference/fsharp-data-htmlnode.html">HtmlNode</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns:
+                </span>
+                <code>bool</code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name">
+            <div>
+              <code onmouseout="hideTip(event, '36', 36)" onmouseover="showTip(event, '36', 36)">
+                <p>
+                  <a id="hasName">
+                    <a href="#hasName">
+                      <code><span>hasName&#32;<span>expectedName&#32;n</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="36">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>hasName&#32;<span>expectedName&#32;n</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        expectedName
+                      </b>
+                      :
+                      <code>string</code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        n
+                      </b>
+                      :
+                      <code><a href="https://fsprojects.github.io/FSharp.Data/reference/fsharp-data-htmlnode.html">HtmlNode</a></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code>bool</code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class="fsdocs-summary">
+              <a href="https://github.com/fsprojects/FSharp.Data/tree/master/src/Html/HtmlOperations.fs#L210-210" class="fsdocs-source-link">
+                <img src="https://fsprojects.github.io/FSharp.Data/content/img/github.png" class="normal"/>
+                <img src="https://fsprojects.github.io/FSharp.Data/content/img/github-blue.png" class="hover"/>
+              </a>
+              
+ Returns true if the current node has the specified name
+
+            </p>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  expectedName
+                </span>
+                :
+                <code>string</code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  n
+                </span>
+                :
+                <code><a href="https://fsprojects.github.io/FSharp.Data/reference/fsharp-data-htmlnode.html">HtmlNode</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns:
+                </span>
+                <code>bool</code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name">
+            <div>
+              <code onmouseout="hideTip(event, '37', 37)" onmouseover="showTip(event, '37', 37)">
+                <p>
+                  <a id="innerText">
+                    <a href="#innerText">
+                      <code><span>innerText&#32;<span>n</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="37">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>innerText&#32;<span>n</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        n
+                      </b>
+                      :
+                      <code><a href="https://fsprojects.github.io/FSharp.Data/reference/fsharp-data-htmlnode.html">HtmlNode</a></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code>string</code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class="fsdocs-summary">
+              <a href="https://github.com/fsprojects/FSharp.Data/tree/master/src/Html/HtmlOperations.fs#L256-256" class="fsdocs-source-link">
+                <img src="https://fsprojects.github.io/FSharp.Data/content/img/github.png" class="normal"/>
+                <img src="https://fsprojects.github.io/FSharp.Data/content/img/github-blue.png" class="hover"/>
+              </a>
+              
+ Returns the inner text of the current node
+ Parameters:
+ * n - The given node
+
+            </p>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  n
+                </span>
+                :
+                <code><a href="https://fsprojects.github.io/FSharp.Data/reference/fsharp-data-htmlnode.html">HtmlNode</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns:
+                </span>
+                <code>string</code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name">
+            <div>
+              <code onmouseout="hideTip(event, '38', 38)" onmouseover="showTip(event, '38', 38)">
+                <p>
+                  <a id="innerTextExcluding">
+                    <a href="#innerTextExcluding">
+                      <code><span>innerTextExcluding&#32;<span>exclusions&#32;n</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="38">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>innerTextExcluding&#32;<span>exclusions&#32;n</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        exclusions
+                      </b>
+                      :
+                      <code><span>string&#32;list</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        n
+                      </b>
+                      :
+                      <code><a href="https://fsprojects.github.io/FSharp.Data/reference/fsharp-data-htmlnode.html">HtmlNode</a></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code>string</code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class="fsdocs-summary">
+              <a href="https://github.com/fsprojects/FSharp.Data/tree/master/src/Html/HtmlOperations.fs#L250-250" class="fsdocs-source-link">
+                <img src="https://fsprojects.github.io/FSharp.Data/content/img/github.png" class="normal"/>
+                <img src="https://fsprojects.github.io/FSharp.Data/content/img/github-blue.png" class="hover"/>
+              </a>
+              
+            </p>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  exclusions
+                </span>
+                :
+                <code><span>string&#32;list</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  n
+                </span>
+                :
+                <code><a href="https://fsprojects.github.io/FSharp.Data/reference/fsharp-data-htmlnode.html">HtmlNode</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns:
+                </span>
+                <code>string</code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name">
+            <div>
+              <code onmouseout="hideTip(event, '39', 39)" onmouseover="showTip(event, '39', 39)">
+                <p>
+                  <a id="name">
+                    <a href="#name">
+                      <code><span>name&#32;<span>n</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="39">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>name&#32;<span>n</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        n
+                      </b>
+                      :
+                      <code><a href="https://fsprojects.github.io/FSharp.Data/reference/fsharp-data-htmlnode.html">HtmlNode</a></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code>string</code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class="fsdocs-summary">
+              <a href="https://github.com/fsprojects/FSharp.Data/tree/master/src/Html/HtmlOperations.fs#L52-52" class="fsdocs-source-link">
+                <img src="https://fsprojects.github.io/FSharp.Data/content/img/github.png" class="normal"/>
+                <img src="https://fsprojects.github.io/FSharp.Data/content/img/github-blue.png" class="hover"/>
+              </a>
+              
+ Gets the given nodes name
+
+            </p>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  n
+                </span>
+                :
+                <code><a href="https://fsprojects.github.io/FSharp.Data/reference/fsharp-data-htmlnode.html">HtmlNode</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns:
+                </span>
+                <code>string</code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name">
+            <div>
+              <code onmouseout="hideTip(event, '40', 40)" onmouseover="showTip(event, '40', 40)">
+                <p>
+                  <a id="tryGetAttribute">
+                    <a href="#tryGetAttribute">
+                      <code><span>tryGetAttribute&#32;<span>name&#32;n</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="40">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>tryGetAttribute&#32;<span>name&#32;n</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        name
+                      </b>
+                      :
+                      <code>string</code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        n
+                      </b>
+                      :
+                      <code><a href="https://fsprojects.github.io/FSharp.Data/reference/fsharp-data-htmlnode.html">HtmlNode</a></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="https://fsprojects.github.io/FSharp.Data/reference/fsharp-data-htmlattribute.html">HtmlAttribute</a>&#32;option</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class="fsdocs-summary">
+              <a href="https://github.com/fsprojects/FSharp.Data/tree/master/src/Html/HtmlOperations.fs#L178-178" class="fsdocs-source-link">
+                <img src="https://fsprojects.github.io/FSharp.Data/content/img/github.png" class="normal"/>
+                <img src="https://fsprojects.github.io/FSharp.Data/content/img/github-blue.png" class="hover"/>
+              </a>
+              
+ Tries to return an attribute that exists on the current node
+ Parameters:
+ * name - The name of the attribute to return.
+
+            </p>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  name
+                </span>
+                :
+                <code>string</code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  n
+                </span>
+                :
+                <code><a href="https://fsprojects.github.io/FSharp.Data/reference/fsharp-data-htmlnode.html">HtmlNode</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns:
+                </span>
+                <code><span><a href="https://fsprojects.github.io/FSharp.Data/reference/fsharp-data-htmlattribute.html">HtmlAttribute</a>&#32;option</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+</div>
+            
+        </div>
+
+        <!-- BEGIN SEARCH BOX: this adds support for the search box -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/JavaScript-autoComplete/1.0.4/auto-complete.css" />
+        <script type="text/javascript">var fsdocs_search_baseurl = 'https://fsprojects.github.io/FSharp.Data/';</script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.8/lunr.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/JavaScript-autoComplete/1.0.4/auto-complete.min.js"></script>
+        <script type="text/javascript" src="https://fsprojects.github.io/FSharp.Data/content/fsdocs-search.js"></script>
+        <!-- END SEARCH BOX: this adds support for the search box -->
+    </div>
+</body>
+
+</html>
+

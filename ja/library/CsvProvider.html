@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>CSV 型プロバイダー
+</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="FSharp.Data">
+
+    <link rel="stylesheet" id="theme_link" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.3.1/materia/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script> -->
+
+    <link type="text/css" rel="stylesheet" href="https://fsprojects.github.io/FSharp.Data/content/navbar-fixed-right.css" />
+    <link type="text/css" rel="stylesheet" href="https://fsprojects.github.io/FSharp.Data/content/fsdocs-default.css" />
+    <link type="text/css" rel="stylesheet" href="https://fsprojects.github.io/FSharp.Data/content/fsdocs-custom.css" />
+    <script type="text/javascript" src="https://fsprojects.github.io/FSharp.Data/content/fsdocs-tips.js"></script>
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!-- BEGIN SEARCH BOX: this adds support for the search box -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/JavaScript-autoComplete/1.0.4/auto-complete.css" />
+    <!-- END SEARCH BOX: this adds support for the search box -->
+    
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-md navbar-light bg-secondary fixed-right" id="fsdocs-menu">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <a href="https://fsprojects.github.io/FSharp.Data/"><img id="fsdocs-logo" src="https://fsprojects.github.io/FSharp.Data/img/logo.png" /></a>
+            <!-- BEGIN SEARCH BOX: this adds support for the search box -->
+            <div id="header">
+                <div class="searchbox" id="fsdocs-searchbox">
+                    <label for="search-by">
+                        <i class="fas fa-search"></i>
+                    </label>
+                    <input data-search-input="" id="search-by" type="search" placeholder="Search..." />
+                    <span data-search-clear="">
+                        <i class="fas fa-times"></i>
+                    </span>
+                </div>
+            </div>
+
+            <!-- END SEARCH BOX: this adds support for the search box -->
+            <ul class="navbar-nav">
+                <li class="nav-header">Links</li>
+                <li class="nav-item" id="fsdocs-license-link"><a class="nav-link" href="https://github.com/fsprojects/FSharp.Data/blob/master/LICENSE.md">License (Apache 2.0)</a></li>
+                <li class="nav-item" id="fsdocs-release-notes-link"><a class="nav-link" href="https://github.com/fsprojects/FSharp.Data/blob/master/RELEASE_NOTES.md">Release Notes</a></li>
+                <li class="nav-item" id="fsdocs-repository-link"><a class="nav-link" href="https://github.com/fsprojects/FSharp.Data/">Source Repository</a></li>
+                <li class="nav-header">
+  Documentation
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="https://fsprojects.github.io/FSharp.Data/library/CsvFile.html">
+    CSV Parser
+
+  </a>
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="https://fsprojects.github.io/FSharp.Data/library/CsvProvider.html">
+    CSV Type Provider
+
+  </a>
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="https://fsprojects.github.io/FSharp.Data/library/HtmlCssSelectors.html">
+    HTML CSS selectors
+
+  </a>
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="https://fsprojects.github.io/FSharp.Data/library/HtmlParser.html">
+    HTML Parser
+
+  </a>
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="https://fsprojects.github.io/FSharp.Data/library/HtmlProvider.html">
+    HTML Type Provider
+
+  </a>
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="https://fsprojects.github.io/FSharp.Data/library/Http.html">
+    HTTP Utilities
+
+  </a>
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="https://fsprojects.github.io/FSharp.Data/library/JsonProvider.html">
+    JSON Type Provider
+
+  </a>
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="https://fsprojects.github.io/FSharp.Data/library/JsonValue.html">
+    JSON Parser
+
+  </a>
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="https://fsprojects.github.io/FSharp.Data/library/WorldBank.html">
+    WorldBank Provider
+
+  </a>
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="https://fsprojects.github.io/FSharp.Data/library/XmlProvider.html">
+    XML Type Provider
+
+  </a>
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="https://fsprojects.github.io/FSharp.Data/tutorials/JsonAnonymizer.html">
+    Anonymizing JSON
+
+  </a>
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="https://fsprojects.github.io/FSharp.Data/tutorials/JsonToXml.html">
+    Converting between JSON and XML
+
+  </a>
+</li>
+                <li class="nav-header">
+  API Reference
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="https://fsprojects.github.io/FSharp.Data/reference/index.html">
+    All Namespaces
+  </a>
+</li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="masthead">
+            <h3 class="muted"><a href="https://fsprojects.github.io/FSharp.Data/">FSharp.Data</a></h3>
+        </div>
+        <hr />
+        <div class="container" id="fsdocs-content">
+            <h1><a name="CSV-型プロバイダー" class="anchor" href="#CSV-型プロバイダー">CSV 型プロバイダー</a></h1>
+<p>この記事ではCSV 型プロバイダーを使って
+静的に型付けされた方法でCSVファイルを扱う方法を紹介します。</p>
+<p>CSV 型プロバイダーは入力としてサンプルとなるCSVを受け取り、
+このサンプル内の列データを元にした型を生成します。
+列の名前は1行目(ヘッダ行)が元になり、各列の型は2行目以降にあるデータから
+推測されます。</p>
+<h2><a name="プロバイダーの基本" class="anchor" href="#プロバイダーの基本">プロバイダーの基本</a></h2>
+<p>この型プロバイダーは <code>FSharp.Data.Dll</code> アセンブリに含まれています。
+このアセンブリが <code>../../../../bin</code> にあるとすると、
+F# Interactiveでアセンブリを読み込むには以下のようにします：</p>
+<pre class="fssnip highlighted"><code lang="fsharp"><span class="k">open</span> <span onmouseout="hideTip(event, 'fs1', 1)" onmouseover="showTip(event, 'fs1', 1)" class="id">FSharp</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs2', 2)" onmouseover="showTip(event, 'fs2', 2)" class="id">Data</span>
+</code></pre>
+<h3><a name="株価をパースする" class="anchor" href="#株価をパースする">株価をパースする</a></h3>
+<p>Yahoo FinanceのWebサイトでは以下のような構造のCSV形式で
+日単位の株価が公開されています
+(より大きな例としては <a href="../../data/MSFT.csv"><code>data/MSFT.csv</code></a> ファイルを
+参照してください)：</p>
+<table class="pre"><tr><td class="snippet"><pre class="fssnip"><code lang="text">Date,Open,High,Low,Close,Volume,Adj Close
+2012-01-27,29.45,29.53,29.17,29.23,44187700,29.23
+2012-01-26,29.61,29.70,29.40,29.50,49102800,29.50
+2012-01-25,29.07,29.65,29.07,29.56,59231700,29.56
+2012-01-24,29.47,29.57,29.18,29.34,51703300,29.34
+</code></pre></td></tr></table>
+<p>一般的なCSVファイルと同じく、1行目にはヘッダ(各列の名前)があり、
+2行目以降にデータがあります。
+このファイルを <code>CsvProvider</code> に指定すると、
+静的に型付けされた方法でファイルの内容を参照できるようになります：</p>
+<pre class="fssnip highlighted"><code lang="fsharp"><span class="k">type</span> <span onmouseout="hideTip(event, 'fs3', 3)" onmouseover="showTip(event, 'fs3', 3)" class="d">Stocks</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs4', 4)" onmouseover="showTip(event, 'fs4', 4)" class="rt">CsvProvider</span><span class="pn">&lt;</span><span class="s">&quot;../../data/MSFT.csv&quot;</span><span class="pn">,</span> <span class="fn">ResolutionFolder</span><span class="o">=</span><span class="k">__SOURCE_DIRECTORY__</span><span class="pn">&gt;</span>
+</code></pre>
+<p>生成された型にはデータをロードするための2つのstaticメソッドがあります。
+データが文字列の場合には <code>Parse</code> メソッドを使用します。
+データがファイルやWeb上のリソースの場合には <code>Load</code> メソッドを使用します
+(非同期バージョンの <code>AsyncLoad</code> メソッドもあります)。
+型プロバイダーに指定するサンプル用の引数には
+ローカルのパスだけではなく、Web上のURLを指定することもできます。
+以下の例ではYahoo FinanceのWebサイトで実際に公開されているCSVファイルの
+URLを使って <code>Load</code> メソッドを呼び出しています：</p>
+<pre class="fssnip highlighted"><code lang="fsharp"><span class="c">// 株価データをダウンロード</span>
+<span class="k">let</span> <span onmouseout="hideTip(event, 'fs5', 5)" onmouseover="showTip(event, 'fs5', 5)" class="d">msft</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs3', 6)" onmouseover="showTip(event, 'fs3', 6)" class="d">Stocks</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs6', 7)" onmouseover="showTip(event, 'fs6', 7)" class="id">Load</span><span class="pn">(</span><span class="k">__SOURCE_DIRECTORY__</span> <span class="o">+</span> <span class="s">&quot;/../../data/MSFT.csv&quot;</span><span class="pn">)</span>
+
+<span class="c">// 最新の行をチェックする。なお &#39;Date&#39; プロパティは</span>
+<span class="c">// &#39;DateTime&#39; 型で、 &#39;Open&#39; プロパティは &#39;decimal&#39; 型であることに注意</span>
+<span class="k">let</span> <span onmouseout="hideTip(event, 'fs7', 8)" onmouseover="showTip(event, 'fs7', 8)" class="id">firstRow</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs5', 9)" onmouseover="showTip(event, 'fs5', 9)" class="d">msft</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs8', 10)" onmouseover="showTip(event, 'fs8', 10)" class="id">Rows</span> <span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs9', 11)" onmouseover="showTip(event, 'fs9', 11)" class="m">Seq</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs10', 12)" onmouseover="showTip(event, 'fs10', 12)" class="id">head</span>
+<span class="k">let</span> <span onmouseout="hideTip(event, 'fs11', 13)" onmouseover="showTip(event, 'fs11', 13)" class="id">lastDate</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs7', 14)" onmouseover="showTip(event, 'fs7', 14)" class="id">firstRow</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs12', 15)" onmouseover="showTip(event, 'fs12', 15)" class="id">Date</span>
+<span class="k">let</span> <span onmouseout="hideTip(event, 'fs13', 16)" onmouseover="showTip(event, 'fs13', 16)" class="id">lastOpen</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs7', 17)" onmouseover="showTip(event, 'fs7', 17)" class="id">firstRow</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs14', 18)" onmouseover="showTip(event, 'fs14', 18)" class="id">Open</span>
+
+<span class="c">// 株価を四本値形式で表示</span>
+<span class="k">for</span> <span onmouseout="hideTip(event, 'fs15', 19)" onmouseover="showTip(event, 'fs15', 19)" class="fn">row</span> <span class="k">in</span> <span onmouseout="hideTip(event, 'fs5', 20)" onmouseover="showTip(event, 'fs5', 20)" class="d">msft</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs8', 21)" onmouseover="showTip(event, 'fs8', 21)" class="id">Rows</span> <span class="k">do</span>
+  <span onmouseout="hideTip(event, 'fs16', 22)" onmouseover="showTip(event, 'fs16', 22)" class="fn">printfn</span> <span class="s">&quot;HLOC: (</span><span class="pf">%A</span><span class="s">, </span><span class="pf">%A</span><span class="s">, </span><span class="pf">%A</span><span class="s">, </span><span class="pf">%A</span><span class="s">)&quot;</span> <span onmouseout="hideTip(event, 'fs15', 23)" onmouseover="showTip(event, 'fs15', 23)" class="fn">row</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs17', 24)" onmouseover="showTip(event, 'fs17', 24)" class="id">High</span> <span onmouseout="hideTip(event, 'fs15', 25)" onmouseover="showTip(event, 'fs15', 25)" class="fn">row</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs18', 26)" onmouseover="showTip(event, 'fs18', 26)" class="id">Low</span> <span onmouseout="hideTip(event, 'fs15', 27)" onmouseover="showTip(event, 'fs15', 27)" class="fn">row</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs14', 28)" onmouseover="showTip(event, 'fs14', 28)" class="id">Open</span> <span onmouseout="hideTip(event, 'fs15', 29)" onmouseover="showTip(event, 'fs15', 29)" class="fn">row</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs19', 30)" onmouseover="showTip(event, 'fs19', 30)" class="id">Close</span>
+</code></pre>
+<blockquote>
+<p>訳注：四本値とは高値、安値、始値、終値の4種の値段のこと</p>
+</blockquote>
+<p>生成された型にはCSVファイルのデータを行コレクションとして返す
+<code>Rows</code> プロパティがあります。
+ここでは <code>for</code> ループを使って各行を走査しています。
+見て分かるように、行のための(生成された)型には <code>High</code> や <code>Low</code> 、
+<code>Close</code> など、CSVファイルの各列に対応するプロパティがあります。</p>
+<p>また、型プロバイダーが各列の型を推測していることも確認できます。
+<code>Date</code> プロパティは(サンプルファイル中のデータが日付としてパースできるため)
+<code>DateTime</code> 型として推測されていますが、一方で四本値はそれぞれ
+<code>decimal</code> として推測されています。</p>
+<h2><a name="測定単位を使用する" class="anchor" href="#測定単位を使用する">測定単位を使用する</a></h2>
+<p>もう1つ興味深い機能として、CSV 型プロバイダーは測定単位をサポートしています。
+標準SI単位の名前あるいは記号がヘッダに含まれている場合、
+生成された型では特定の単位が付加された値が返されるようになります。</p>
+<p>このセクションでは以下のような単純なデータが含まれた
+<a href="../../data/SmallTest.csv"><code>data/SmallTest.csv</code></a> を使います：</p>
+<table class="pre"><tr><td class="snippet"><pre class="fssnip"><code lang="text">Name,  Distance (metre), Time (s)
+First, 50.0,             3.7
+</code></pre></td></tr></table>
+<p>見ての通り、2列目と3列目にはそれぞれ <code>metre</code> と <code>s</code> という単位があります。
+コード側で測定単位を使う場合、
+標準単位名を含んだ名前空間をオープンする必要があります。
+その後、型プロバイダーのstatic引数に <code>SmallTest.csv</code> を指定します。
+なお今回は同じデータを実行時にも使用するため、
+同じ引数を再度指定して <code>Load</code> を呼び出すのではなく、
+<code>GetSample</code> メソッドを使っていることに注意してください。</p>
+<pre class="fssnip highlighted"><code lang="fsharp"><span class="k">let</span> <span onmouseout="hideTip(event, 'fs20', 31)" onmouseover="showTip(event, 'fs20', 31)" class="d">small</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs4', 32)" onmouseover="showTip(event, 'fs4', 32)" class="rt">CsvProvider</span><span class="pn">&lt;</span><span class="s">&quot;../../data/SmallTest.csv&quot;</span><span class="pn">,</span> <span class="fn">ResolutionFolder</span><span class="o">=</span><span class="k">__SOURCE_DIRECTORY__</span><span class="pn">&gt;</span><span class="pn">.</span><span class="id">GetSample</span><span class="pn">(</span><span class="pn">)</span>
+</code></pre>
+<p>先ほどの例と同じく、行データは値 <code>small</code> の <code>Rows</code> プロパティで取得できます。
+今回は生成されたプロパティ <code>Distance</code> と <code>Time</code> に単位が付加されています。
+以下の単純な計算をみてください：</p>
+<pre class="fssnip highlighted"><code lang="fsharp"><span class="k">open</span> <span onmouseout="hideTip(event, 'fs1', 33)" onmouseover="showTip(event, 'fs1', 33)" class="id">FSharp</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs2', 34)" onmouseover="showTip(event, 'fs2', 34)" class="id">Data</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs21', 35)" onmouseover="showTip(event, 'fs21', 35)" class="id">UnitSystems</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs22', 36)" onmouseover="showTip(event, 'fs22', 36)" class="id">SI</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs23', 37)" onmouseover="showTip(event, 'fs23', 37)" class="id">UnitNames</span>
+
+<span class="k">for</span> <span onmouseout="hideTip(event, 'fs15', 38)" onmouseover="showTip(event, 'fs15', 38)" class="fn">row</span> <span class="k">in</span> <span onmouseout="hideTip(event, 'fs20', 39)" onmouseover="showTip(event, 'fs20', 39)" class="d">small</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs8', 40)" onmouseover="showTip(event, 'fs8', 40)" class="id">Rows</span> <span class="k">do</span>
+  <span class="k">let</span> <span onmouseout="hideTip(event, 'fs24', 41)" onmouseover="showTip(event, 'fs24', 41)" class="fn">speed</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs15', 42)" onmouseover="showTip(event, 'fs15', 42)" class="fn">row</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs25', 43)" onmouseover="showTip(event, 'fs25', 43)" class="id">Distance</span> <span class="o">/</span> <span onmouseout="hideTip(event, 'fs15', 44)" onmouseover="showTip(event, 'fs15', 44)" class="fn">row</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs26', 45)" onmouseover="showTip(event, 'fs26', 45)" class="id">Time</span>
+  <span class="k">if</span> <span onmouseout="hideTip(event, 'fs24', 46)" onmouseover="showTip(event, 'fs24', 46)" class="fn">speed</span> <span class="o">&gt;</span> <span class="n">15.0M</span><span class="pn">&lt;</span><span onmouseout="hideTip(event, 'fs27', 47)" onmouseover="showTip(event, 'fs27', 47)" class="rt">metre</span><span class="o">/</span><span onmouseout="hideTip(event, 'fs28', 48)" onmouseover="showTip(event, 'fs28', 48)" class="rt">second</span><span class="pn">&gt;</span> <span class="k">then</span> 
+    <span onmouseout="hideTip(event, 'fs16', 49)" onmouseover="showTip(event, 'fs16', 49)" class="fn">printfn</span> <span class="s">&quot;</span><span class="pf">%s</span><span class="s"> (</span><span class="pf">%A</span><span class="s"> m/s)&quot;</span> <span onmouseout="hideTip(event, 'fs15', 50)" onmouseover="showTip(event, 'fs15', 50)" class="fn">row</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs29', 51)" onmouseover="showTip(event, 'fs29', 51)" class="id">Name</span> <span onmouseout="hideTip(event, 'fs24', 52)" onmouseover="showTip(event, 'fs24', 52)" class="fn">speed</span>
+</code></pre>
+<p><code>Distance</code> と <code>Time</code> の数値的な値はいずれも(かなり小さな値なので)
+<code>decimal</code> として推測されています。
+したがって <code>speed</code> の型は <code>decimal&lt;meter/second&gt;</code> になります。
+そうするとコンパイラは互換性のない値を比較していないかどうか、
+つまりたとえばメートル毎秒とキロメートル毎時を比較していたりはしないか
+チェックするようになります。</p>
+<h2><a name="独自の区切り文字とタブ区切りファイル" class="anchor" href="#独自の区切り文字とタブ区切りファイル">独自の区切り文字とタブ区切りファイル</a></h2>
+<p>CSV 型プロバイダーはデフォルトではカンマ( <code>,</code> )を区切り文字とします。
+しかし場合によっては <code>,</code> ではない区切り文字が
+CSVファイルで使われていることがあります。
+ヨーロッパの一部の国では <code>,</code> が10進数の区切り文字として使われているため、
+CSVの列区切り文字には代わりにセミコロン( <code>;</code> )が使われます。
+<code>CsvProvider</code> は省略可能なstatic引数 <code>Separator</code> に
+代わりとなる区切り文字を指定できます。
+つまりこれを使えばタブ区切り形式のテキストも処理できるわけです。
+以下では区切り文字として <code>;</code> を使っています：</p>
+<pre class="fssnip highlighted"><code lang="fsharp"><span class="k">let</span> <span onmouseout="hideTip(event, 'fs30', 53)" onmouseover="showTip(event, 'fs30', 53)" class="d">airQuality</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs4', 54)" onmouseover="showTip(event, 'fs4', 54)" class="rt">CsvProvider</span><span class="pn">&lt;</span><span class="s">&quot;../../data/AirQuality.csv&quot;</span><span class="pn">,</span> <span class="s">&quot;;&quot;</span><span class="pn">,</span> <span class="fn">ResolutionFolder</span><span class="o">=</span><span class="k">__SOURCE_DIRECTORY__</span><span class="pn">&gt;</span><span class="pn">.</span><span class="id">GetSample</span><span class="pn">(</span><span class="pn">)</span>
+
+<span class="k">for</span> <span onmouseout="hideTip(event, 'fs15', 55)" onmouseover="showTip(event, 'fs15', 55)" class="fn">row</span> <span class="k">in</span> <span onmouseout="hideTip(event, 'fs30', 56)" onmouseover="showTip(event, 'fs30', 56)" class="d">airQuality</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs8', 57)" onmouseover="showTip(event, 'fs8', 57)" class="id">Rows</span> <span class="k">do</span>
+  <span class="k">if</span> <span onmouseout="hideTip(event, 'fs15', 58)" onmouseover="showTip(event, 'fs15', 58)" class="fn">row</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs31', 59)" onmouseover="showTip(event, 'fs31', 59)" class="id">Month</span> <span class="o">&gt;</span> <span class="n">6</span> <span class="k">then</span> 
+    <span onmouseout="hideTip(event, 'fs16', 60)" onmouseover="showTip(event, 'fs16', 60)" class="fn">printfn</span> <span class="s">&quot;Temp: </span><span class="pf">%i</span><span class="s"> Ozone: </span><span class="pf">%f</span><span class="s"> &quot;</span> <span onmouseout="hideTip(event, 'fs15', 61)" onmouseover="showTip(event, 'fs15', 61)" class="fn">row</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs32', 62)" onmouseover="showTip(event, 'fs32', 62)" class="id">Temp</span> <span onmouseout="hideTip(event, 'fs15', 63)" onmouseover="showTip(event, 'fs15', 63)" class="fn">row</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs33', 64)" onmouseover="showTip(event, 'fs33', 64)" class="id">Ozone</span>
+</code></pre>
+<p>空気質のデータセット(<a href="../../data/AirQuality.csv"><code>data/AirQuality.csv</code></a>)は
+統計解析向け言語 R の多くのサンプルで使われているものです。
+このデータセットの簡単な説明については
+<a href="http://stat.ethz.ch/R-manual/R-devel/library/datasets/html/airquality.html">R の言語マニュアル</a>
+を参照してください。</p>
+<p><code>\t</code> を区切り文字とするようなタブ区切りファイルを処理する場合には
+やはり区切り文字を明示的に指定してもよいでしょう。
+ですが、URLまたはファイルの末尾にある拡張子が <code>.tsv</code> になっていると
+型プロバイダーはデフォルトで <code>\t</code> を区切り文字とするようになります。
+以下の例ではstatic引数 <code>IgnoreErrors</code> を <code>true</code> にして、
+要素数が異なる行を自動的に無視するようにもしています
+(サンプルファイル <a href="../../data/MortalityNY.tsv"><code>data/MortalityNY.csv</code></a> には
+末尾に構造化されていないデータが追加されています)：</p>
+<pre class="fssnip highlighted"><code lang="fsharp"><span class="k">let</span> <span onmouseout="hideTip(event, 'fs34', 65)" onmouseover="showTip(event, 'fs34', 65)" class="d">mortalityNy</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs4', 66)" onmouseover="showTip(event, 'fs4', 66)" class="rt">CsvProvider</span><span class="pn">&lt;</span><span class="s">&quot;../../data/MortalityNY.tsv&quot;</span><span class="pn">,</span> <span class="fn">IgnoreErrors</span><span class="o">=</span><span class="k">true</span><span class="pn">,</span> <span class="fn">ResolutionFolder</span><span class="o">=</span><span class="k">__SOURCE_DIRECTORY__</span><span class="pn">&gt;</span><span class="pn">.</span><span class="id">GetSample</span><span class="pn">(</span><span class="pn">)</span>
+
+<span class="c">// 原因名をコードで検索</span>
+<span class="c">// (事故で負傷した自転車走者)</span>
+<span class="k">let</span> <span onmouseout="hideTip(event, 'fs35', 67)" onmouseover="showTip(event, 'fs35', 67)" class="id">cause</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs34', 68)" onmouseover="showTip(event, 'fs34', 68)" class="d">mortalityNy</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs8', 69)" onmouseover="showTip(event, 'fs8', 69)" class="id">Rows</span> <span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs9', 70)" onmouseover="showTip(event, 'fs9', 70)" class="m">Seq</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs36', 71)" onmouseover="showTip(event, 'fs36', 71)" class="id">find</span> <span class="pn">(</span><span class="k">fun</span> <span onmouseout="hideTip(event, 'fs37', 72)" onmouseover="showTip(event, 'fs37', 72)" class="fn">r</span> <span class="k">-&gt;</span> 
+  <span onmouseout="hideTip(event, 'fs37', 73)" onmouseover="showTip(event, 'fs37', 73)" class="fn">r</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs38', 74)" onmouseover="showTip(event, 'fs38', 74)" class="id">``Cause of death Code``</span> <span class="o">=</span> <span class="s">&quot;V13.4&quot;</span><span class="pn">)</span>
+
+<span class="c">// 負傷した走者数を出力</span>
+<span onmouseout="hideTip(event, 'fs16', 75)" onmouseover="showTip(event, 'fs16', 75)" class="fn">printfn</span> <span class="s">&quot;原因: </span><span class="pf">%s</span><span class="s">&quot;</span> <span onmouseout="hideTip(event, 'fs35', 76)" onmouseover="showTip(event, 'fs35', 76)" class="id">cause</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs39', 77)" onmouseover="showTip(event, 'fs39', 77)" class="id">``Cause of death``</span>
+<span class="k">for</span> <span onmouseout="hideTip(event, 'fs37', 78)" onmouseover="showTip(event, 'fs37', 78)" class="fn">r</span> <span class="k">in</span> <span onmouseout="hideTip(event, 'fs34', 79)" onmouseover="showTip(event, 'fs34', 79)" class="d">mortalityNy</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs8', 80)" onmouseover="showTip(event, 'fs8', 80)" class="id">Rows</span> <span class="k">do</span>
+  <span class="k">if</span> <span onmouseout="hideTip(event, 'fs37', 81)" onmouseover="showTip(event, 'fs37', 81)" class="fn">r</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs38', 82)" onmouseover="showTip(event, 'fs38', 82)" class="id">``Cause of death Code``</span> <span class="o">=</span> <span class="s">&quot;V13.4&quot;</span> <span class="k">then</span> 
+    <span onmouseout="hideTip(event, 'fs16', 83)" onmouseover="showTip(event, 'fs16', 83)" class="fn">printfn</span> <span class="s">&quot;</span><span class="pf">%s</span><span class="s"> (</span><span class="pf">%d</span><span class="s"> 件)&quot;</span> <span onmouseout="hideTip(event, 'fs37', 84)" onmouseover="showTip(event, 'fs37', 84)" class="fn">r</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs40', 85)" onmouseover="showTip(event, 'fs40', 85)" class="id">County</span> <span onmouseout="hideTip(event, 'fs37', 86)" onmouseover="showTip(event, 'fs37', 86)" class="fn">r</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs41', 87)" onmouseover="showTip(event, 'fs41', 87)" class="id">Count</span>
+</code></pre>
+<p>最後に、 <code>CsvProvider</code> には複数種類の区切り文字を指定することもできます。
+これはたとえばファイルが不正で、セミコロンかコロンのどちらかで
+行が区切られているような場合に有効です。
+具体的には
+<code>CsvProvider&lt;"../../data/AirQuality.csv", Separator=";,", ResolutionFolder=__SOURCE_DIRECTORY__&gt;</code>
+というようにします。</p>
+<h2><a name="値無し" class="anchor" href="#値無し">値無し</a></h2>
+<p>統計的データセットでは一部の値が無しになっているということがよくあります。
+<a href="../../data/AirQuality.csv"><code>data/AirQuality.csv</code></a> ファイルを開くと、
+一部のオゾンの観測値が <code>#N/A</code> と記録されていることが確認できます。
+このような値はfloatとしてパースされ、F#であれば <code>Double.NaN</code> という値とみなされます。
+デフォルトでは <code>#N/A</code> <code>NA</code> <code>:</code> が値無しを表す値と認識されますが、
+<code>CsvProvider</code> のstatic引数 <code>MissingValues</code> を指定して
+カスタマイズすることもできます。</p>
+<p>以下のコードでは <code>Double.NaN</code> になっている値を除いて、
+オゾンの観測値の平均を計算しています。
+まず各行の <code>Ozone</code> プロパティを取得して値無しを除去した後、
+標準の <code>Seq.average</code> 関数を使って平均を計算しています：</p>
+<pre class="fssnip highlighted"><code lang="fsharp"><span class="k">let</span> <span onmouseout="hideTip(event, 'fs42', 88)" onmouseover="showTip(event, 'fs42', 88)" class="id">mean</span> <span class="o">=</span> 
+  <span onmouseout="hideTip(event, 'fs30', 89)" onmouseover="showTip(event, 'fs30', 89)" class="d">airQuality</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs8', 90)" onmouseover="showTip(event, 'fs8', 90)" class="id">Rows</span> 
+  <span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs9', 91)" onmouseover="showTip(event, 'fs9', 91)" class="m">Seq</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs43', 92)" onmouseover="showTip(event, 'fs43', 92)" class="id">map</span> <span class="pn">(</span><span class="k">fun</span> <span onmouseout="hideTip(event, 'fs15', 93)" onmouseover="showTip(event, 'fs15', 93)" class="fn">row</span> <span class="k">-&gt;</span> <span onmouseout="hideTip(event, 'fs15', 94)" onmouseover="showTip(event, 'fs15', 94)" class="fn">row</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs33', 95)" onmouseover="showTip(event, 'fs33', 95)" class="id">Ozone</span><span class="pn">)</span> 
+  <span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs9', 96)" onmouseover="showTip(event, 'fs9', 96)" class="m">Seq</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs44', 97)" onmouseover="showTip(event, 'fs44', 97)" class="id">filter</span> <span class="pn">(</span><span class="k">fun</span> <span onmouseout="hideTip(event, 'fs45', 98)" onmouseover="showTip(event, 'fs45', 98)" class="fn">elem</span> <span class="k">-&gt;</span> <span onmouseout="hideTip(event, 'fs46', 99)" onmouseover="showTip(event, 'fs46', 99)" class="fn">not</span> <span class="pn">(</span><span onmouseout="hideTip(event, 'fs47', 100)" onmouseover="showTip(event, 'fs47', 100)" class="id">System</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs48', 101)" onmouseover="showTip(event, 'fs48', 101)" class="vt">Double</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs49', 102)" onmouseover="showTip(event, 'fs49', 102)" class="id">IsNaN</span> <span onmouseout="hideTip(event, 'fs45', 103)" onmouseover="showTip(event, 'fs45', 103)" class="fn">elem</span><span class="pn">)</span><span class="pn">)</span> 
+  <span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs9', 104)" onmouseover="showTip(event, 'fs9', 104)" class="m">Seq</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs50', 105)" onmouseover="showTip(event, 'fs50', 105)" class="id">average</span> 
+</code></pre>
+<p>サンプルとして指定するデータにはどの列にも値無しのデータが含まれていないものの、
+実行時にはどこかで値無しが現れる可能性があるという場合には
+<code>AssumeMissingValues</code> を <code>true</code> に設定すれば、
+<code>CsvProvider</code> がどこかの列には値無しが現れるだろうと想定するようになります。</p>
+<h2><a name="列の型を制御する" class="anchor" href="#列の型を制御する">列の型を制御する</a></h2>
+<p>デフォルトではCSV 型プロバイダーは最初の1000行を使って型を推測します。
+しかし <code>CsvProvider</code> のstatic引数 <code>InferRows</code> を使うと
+この動作をカスタマイズできます。
+0を指定するとファイル全体が使われるようになります。</p>
+<p><code>0</code> <code>1</code> <code>Yes</code> <code>No</code> <code>True</code> <code>False</code> しか含まない列は <code>bool</code> になります。
+数値を含む列はそれぞれ精度に応じて <code>int</code> <code>int64</code> <code>decimal</code> <code>float</code> の
+いずれかになります。</p>
+<p>いずれかの行で値無しになっている場合、CSV 型プロバイダーは
+その行を(<code>int</code> および <code>int64</code> に対しては)null許容型、
+あるいは(<code>bool</code> <code>DateTime</code> <code>Guid</code> に対しては)オプション型とみなします。
+<code>decimal</code> と推測できる列に値無しが含まれる場合、代わりに <code>float</code> とみなされ、
+値無しが <code>Double.NaN</code> として表現されます。
+<code>string</code> 型はそれ自体が既にnullを許容するため、
+デフォルトでは <code>string option</code> と推測されることはありません。
+すべての場合においてオプション型になるようにしたい場合には、
+static引数 <code>PreferOptionals</code> を <code>true</code> にします。
+この設定を行うと、空の文字列や <code>Double.NaN</code> ではなく、
+代わりに <code>None</code> が返されるようになります。</p>
+<p>他にもたとえば <code>decimal</code> ではなく <code>float</code> として行を扱いたいというような、
+別の設定を使いたい場合には、ヘッダ行で列の型を丸括弧で囲んで記述することで
+デフォルトの動作を上書きできます。
+これは測定単位を指定する方法と同じです。
+ヘッダ行による指定方法は <code>AssumeMissingValues</code> や <code>PreferOptionals</code> の動作を上書きします。
+指定可能な型は以下の通りです：</p>
+<ul>
+<li><code>int</code></li>
+<li><code>int?</code></li>
+<li><code>int option</code></li>
+<li><code>int64</code></li>
+<li><code>int64?</code></li>
+<li><code>int64 option</code></li>
+<li><code>bool</code></li>
+<li><code>bool?</code></li>
+<li><code>bool option</code></li>
+<li><code>float</code></li>
+<li><code>float?</code></li>
+<li><code>float option</code></li>
+<li><code>decimal</code></li>
+<li><code>decimal?</code></li>
+<li><code>decimal option</code></li>
+<li><code>date</code></li>
+<li><code>date?</code></li>
+<li><code>date option</code></li>
+<li><code>guid</code></li>
+<li><code>guid?</code></li>
+<li><code>guid option</code></li>
+<li><code>string</code></li>
+<li><code>string option</code>.</li>
+</ul>
+<p>型と測定単位の両方を( <code>float&lt;metre&gt;</code> のようにして)指定することもできます。
+たとえば以下の通りです：</p>
+<table class="pre"><tr><td class="snippet"><pre class="fssnip"><code lang="text">Name,  Distance (decimal?&lt;metre&gt;), Time (float)
+First, 50,                        3
+</code></pre></td></tr></table>
+<p>さらに、 <code>CsvProvider</code> のstatic引数 <code>Schema</code> で一部またはすべての型を
+指定することもできます。
+指定可能な形式は以下の通りです：</p>
+<ul>
+<li><code>型</code></li>
+<li><code>型&lt;測定単位&gt;</code></li>
+<li><code>名前 (型)</code></li>
+<li><code>名前 (型&lt;測定単位&gt;)</code></li>
+</ul>
+<p><code>Schema</code> 引数で指定された値はヘッダ行で指定されたものよりも常に優先されます。</p>
+<p>ファイルの1行目がヘッダ行ではない場合、static引数 <code>HasHeaders</code> を <code>false</code> に
+すると1行目もデータ行とみなされるようになります。
+この場合、それぞれの行は <code>Schema</code> 引数で指定されていなければ
+<code>Column1</code> <code>Column2</code> という名前になります。
+なお <code>Schema</code> 引数で名前だけを上書きしつつ、
+型プロバイダーに列の型を推測させることもできます。
+たとえば以下のようにします：</p>
+<pre class="fssnip highlighted"><code lang="fsharp"><span class="k">let</span> <span onmouseout="hideTip(event, 'fs51', 106)" onmouseover="showTip(event, 'fs51', 106)" class="d">csv</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs4', 107)" onmouseover="showTip(event, 'fs4', 107)" class="rt">CsvProvider</span><span class="pn">&lt;</span><span class="s">&quot;1,2,3&quot;</span><span class="pn">,</span> <span class="fn">HasHeaders</span> <span class="o">=</span> <span class="k">false</span><span class="pn">,</span> <span class="fn">Schema</span> <span class="o">=</span> <span class="s">&quot;Duration (float&lt;second&gt;),foo,float option&quot;</span><span class="pn">&gt;</span><span class="pn">.</span><span class="id">GetSample</span><span class="pn">(</span><span class="pn">)</span>
+<span class="k">for</span> <span onmouseout="hideTip(event, 'fs15', 108)" onmouseover="showTip(event, 'fs15', 108)" class="fn">row</span> <span class="k">in</span> <span onmouseout="hideTip(event, 'fs51', 109)" onmouseover="showTip(event, 'fs51', 109)" class="d">csv</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs8', 110)" onmouseover="showTip(event, 'fs8', 110)" class="id">Rows</span> <span class="k">do</span>
+  <span onmouseout="hideTip(event, 'fs16', 111)" onmouseover="showTip(event, 'fs16', 111)" class="fn">printfn</span> <span class="s">&quot;</span><span class="pf">%f</span><span class="s"> </span><span class="pf">%d</span><span class="s"> </span><span class="pf">%f</span><span class="s">&quot;</span> <span class="pn">(</span><span onmouseout="hideTip(event, 'fs15', 112)" onmouseover="showTip(event, 'fs15', 112)" class="fn">row</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs52', 113)" onmouseover="showTip(event, 'fs52', 113)" class="id">Duration</span><span class="o">/</span><span class="n">1.0</span><span class="pn">&lt;</span><span onmouseout="hideTip(event, 'fs28', 114)" onmouseover="showTip(event, 'fs28', 114)" class="rt">second</span><span class="pn">&gt;</span><span class="pn">)</span> <span onmouseout="hideTip(event, 'fs15', 115)" onmouseover="showTip(event, 'fs15', 115)" class="fn">row</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs53', 116)" onmouseover="showTip(event, 'fs53', 116)" class="id">Foo</span> <span class="pn">(</span><span onmouseout="hideTip(event, 'fs54', 117)" onmouseover="showTip(event, 'fs54', 117)" class="fn">defaultArg</span> <span onmouseout="hideTip(event, 'fs15', 118)" onmouseover="showTip(event, 'fs15', 118)" class="fn">row</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs55', 119)" onmouseover="showTip(event, 'fs55', 119)" class="id">Column3</span> <span class="n">1.0</span><span class="pn">)</span>
+</code></pre>
+<p>必ずしもすべての列を上書きしなければいけないわけではなく、
+一部をデフォルトのままにしておくこともできます。
+たとえばKaggleから取得したタイタニックの乗船者データ
+(<a href="../../data/Titanic.csv"><code>data/Titanic.csv</code></a>)
+を対象にしている時に、3列目( <code>PClass</code> 列)を <code>Passenger Class</code> 、
+6列目( <code>Fare</code> 列)を <code>decimal</code> ではなく <code>float</code> にしたい場合、
+これらだけを定義しておいて、その他の行が空になっているようなスキーマを
+指定します(末尾で連続するカンマは省略できます)。</p>
+<pre class="fssnip highlighted"><code lang="fsharp"><span class="k">let</span> <span onmouseout="hideTip(event, 'fs56', 120)" onmouseover="showTip(event, 'fs56', 120)" class="d">titanic1</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs4', 121)" onmouseover="showTip(event, 'fs4', 121)" class="rt">CsvProvider</span><span class="pn">&lt;</span><span class="s">&quot;../../data/Titanic.csv&quot;</span><span class="pn">,</span> <span class="fn">Schema</span><span class="o">=</span><span class="s">&quot;,,Passenger Class,,,float&quot;</span><span class="pn">,</span> <span class="fn">ResolutionFolder</span><span class="o">=</span><span class="k">__SOURCE_DIRECTORY__</span><span class="pn">&gt;</span><span class="pn">.</span><span class="id">GetSample</span><span class="pn">(</span><span class="pn">)</span>
+<span class="k">for</span> <span onmouseout="hideTip(event, 'fs15', 122)" onmouseover="showTip(event, 'fs15', 122)" class="fn">row</span> <span class="k">in</span> <span onmouseout="hideTip(event, 'fs56', 123)" onmouseover="showTip(event, 'fs56', 123)" class="d">titanic1</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs8', 124)" onmouseover="showTip(event, 'fs8', 124)" class="id">Rows</span> <span class="k">do</span>
+  <span onmouseout="hideTip(event, 'fs16', 125)" onmouseover="showTip(event, 'fs16', 125)" class="fn">printfn</span> <span class="s">&quot;</span><span class="pf">%s</span><span class="s"> Class = </span><span class="pf">%d</span><span class="s"> Fare = </span><span class="pf">%g</span><span class="s">&quot;</span> <span onmouseout="hideTip(event, 'fs15', 126)" onmouseover="showTip(event, 'fs15', 126)" class="fn">row</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs29', 127)" onmouseover="showTip(event, 'fs29', 127)" class="id">Name</span> <span onmouseout="hideTip(event, 'fs15', 128)" onmouseover="showTip(event, 'fs15', 128)" class="fn">row</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs57', 129)" onmouseover="showTip(event, 'fs57', 129)" class="id">``Passenger Class``</span> <span onmouseout="hideTip(event, 'fs15', 130)" onmouseover="showTip(event, 'fs15', 130)" class="fn">row</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs58', 131)" onmouseover="showTip(event, 'fs58', 131)" class="id">Fare</span>
+</code></pre>
+<p>あるいは位置で指定する代わりに列の名前を使って上書きすることもできます：</p>
+<pre class="fssnip highlighted"><code lang="fsharp"><span class="k">let</span> <span onmouseout="hideTip(event, 'fs59', 132)" onmouseover="showTip(event, 'fs59', 132)" class="d">titanic2</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs4', 133)" onmouseover="showTip(event, 'fs4', 133)" class="rt">CsvProvider</span><span class="pn">&lt;</span><span class="s">&quot;../../data/Titanic.csv&quot;</span><span class="pn">,</span> <span class="fn">Schema</span><span class="o">=</span><span class="s">&quot;Fare=float,PClass-&gt;Passenger Class&quot;</span><span class="pn">,</span> <span class="fn">ResolutionFolder</span><span class="o">=</span><span class="k">__SOURCE_DIRECTORY__</span><span class="pn">&gt;</span><span class="pn">.</span><span class="id">GetSample</span><span class="pn">(</span><span class="pn">)</span>
+<span class="k">for</span> <span onmouseout="hideTip(event, 'fs15', 134)" onmouseover="showTip(event, 'fs15', 134)" class="fn">row</span> <span class="k">in</span> <span onmouseout="hideTip(event, 'fs59', 135)" onmouseover="showTip(event, 'fs59', 135)" class="d">titanic2</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs8', 136)" onmouseover="showTip(event, 'fs8', 136)" class="id">Rows</span> <span class="k">do</span>
+  <span onmouseout="hideTip(event, 'fs16', 137)" onmouseover="showTip(event, 'fs16', 137)" class="fn">printfn</span> <span class="s">&quot;</span><span class="pf">%s</span><span class="s"> Class = </span><span class="pf">%d</span><span class="s"> Fare = </span><span class="pf">%g</span><span class="s">&quot;</span> <span onmouseout="hideTip(event, 'fs15', 138)" onmouseover="showTip(event, 'fs15', 138)" class="fn">row</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs29', 139)" onmouseover="showTip(event, 'fs29', 139)" class="id">Name</span> <span onmouseout="hideTip(event, 'fs15', 140)" onmouseover="showTip(event, 'fs15', 140)" class="fn">row</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs57', 141)" onmouseover="showTip(event, 'fs57', 141)" class="id">``Passenger Class``</span> <span onmouseout="hideTip(event, 'fs15', 142)" onmouseover="showTip(event, 'fs15', 142)" class="fn">row</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs60', 143)" onmouseover="showTip(event, 'fs60', 143)" class="id">Fare</span>
+</code></pre>
+<p>これら2つのシンタックスを組み合わせて
+<code>Schema="int64,DidSurvive,PClass-&gt;Passenger Class=string"</code>
+とすることもできます。</p>
+<h2><a name="CSVファイルの変形" class="anchor" href="#CSVファイルの変形">CSVファイルの変形</a></h2>
+<p><code>CsvProvider</code> はファイルの読み取りだけでなく、データの変形もサポートしています。
+<code>Filter</code> <code>Take</code> <code>TakeWhile</code> <code>Skip</code> <code>SkipWhile</code> <code>Truncate</code> という操作が可能です。
+これらはいずれもスキーマを維持するようになっているため、
+変形後は <code>Save</code> メソッドのいずれかのオーバーロードを使って結果を保存できます。
+結果をCSV形式で保存したくない場合、あるいはデータの形式を変更したい場合には、
+<code>Rows</code> プロパティで取得できる行のシーケンスに対して直接
+<code>Seq</code> モジュールの機能を使うこともできます。</p>
+<pre class="fssnip highlighted"><code lang="fsharp"><span class="c">// 値無しのデータを含まない先頭10行を新しいCSVファイルに保存する</span>
+<span onmouseout="hideTip(event, 'fs30', 144)" onmouseover="showTip(event, 'fs30', 144)" class="d">airQuality</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs61', 145)" onmouseover="showTip(event, 'fs61', 145)" class="id">Filter</span><span class="pn">(</span><span class="k">fun</span> <span onmouseout="hideTip(event, 'fs15', 146)" onmouseover="showTip(event, 'fs15', 146)" class="fn">row</span> <span class="k">-&gt;</span> <span onmouseout="hideTip(event, 'fs46', 147)" onmouseover="showTip(event, 'fs46', 147)" class="fn">not</span> <span class="pn">(</span><span onmouseout="hideTip(event, 'fs47', 148)" onmouseover="showTip(event, 'fs47', 148)" class="id">System</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs48', 149)" onmouseover="showTip(event, 'fs48', 149)" class="vt">Double</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs49', 150)" onmouseover="showTip(event, 'fs49', 150)" class="id">IsNaN</span> <span onmouseout="hideTip(event, 'fs15', 151)" onmouseover="showTip(event, 'fs15', 151)" class="fn">row</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs33', 152)" onmouseover="showTip(event, 'fs33', 152)" class="id">Ozone</span><span class="pn">)</span> <span class="o">&amp;&amp;</span> 
+                             <span onmouseout="hideTip(event, 'fs46', 153)" onmouseover="showTip(event, 'fs46', 153)" class="fn">not</span> <span class="pn">(</span><span onmouseout="hideTip(event, 'fs47', 154)" onmouseover="showTip(event, 'fs47', 154)" class="id">System</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs48', 155)" onmouseover="showTip(event, 'fs48', 155)" class="vt">Double</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs49', 156)" onmouseover="showTip(event, 'fs49', 156)" class="id">IsNaN</span> <span onmouseout="hideTip(event, 'fs15', 157)" onmouseover="showTip(event, 'fs15', 157)" class="fn">row</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs62', 158)" onmouseover="showTip(event, 'fs62', 158)" class="id">``Solar.R``</span><span class="pn">)</span><span class="pn">)</span>
+          <span class="pn">.</span><span class="id">Truncate</span><span class="pn">(</span><span class="n">10</span><span class="pn">)</span>
+          <span class="pn">.</span><span class="id">SaveToString</span><span class="pn">(</span><span class="pn">)</span>
+</code></pre>
+<h2><a name="ビッグデータの処理" class="anchor" href="#ビッグデータの処理">ビッグデータの処理</a></h2>
+<p>デフォルトでは行がキャッシュされるため、 <code>Rows</code> プロパティを複数回走査しても
+特に問題はありません。
+しかし1回しか走査しないのであれば、 <code>CsvProvider</code> のstatic引数
+<code>CacheRows</code> を <code>false</code> にすればキャッシュを無効化できます。
+行数が非常に多い場合、キャッシュを無効化しなければ
+メモリを消費し尽くしてしまうことになるでしょう。
+<code>Cache</code> メソッドを使えば任意のタイミングでデータをキャッシュできますが、
+データセットを小さなサイズに変形した後に限定すべきです：</p>
+<h2><a name="関連する記事" class="anchor" href="#関連する記事">関連する記事</a></h2>
+<ul>
+<li>
+<a href="CsvFile.html">CSV パーサーおよびリーダー</a> -
+CSVドキュメントを動的に処理するための詳しい説明があります。
+</li>
+<li><a href="../../reference/fsharp-data-csvprovider.html">API リファレンス: CsvProvider 型プロバイダー</a></li>
+</ul>
+
+            <div class="fsdocs-tip" id="fs1">Multiple items<br />namespace FSharp<br /><br />--------------------<br />namespace Microsoft.FSharp</div>
+<div class="fsdocs-tip" id="fs2">Multiple items<br />namespace FSharp.Data<br /><br />--------------------<br />namespace Microsoft.FSharp.Data</div>
+<div class="fsdocs-tip" id="fs3">type Stocks = CsvProvider&lt;...&gt;</div>
+<div class="fsdocs-tip" id="fs4">type CsvProvider =<br /><em>&lt;summary&gt;Typed representation of a CSV file.&lt;/summary&gt;
+           &lt;param name=&#39;Sample&#39;&gt;Location of a CSV sample file or a string containing a sample CSV document.&lt;/param&gt;
+           &lt;param name=&#39;Separators&#39;&gt;Column delimiter(s). Defaults to &lt;c&gt;,&lt;/c&gt;.&lt;/param&gt;
+           &lt;param name=&#39;InferRows&#39;&gt;Number of rows to use for inference. Defaults to &lt;c&gt;1000&lt;/c&gt;. If this is zero, all rows are used.&lt;/param&gt;
+           &lt;param name=&#39;Schema&#39;&gt;Optional column types, in a comma separated list. Valid types are &lt;c&gt;int&lt;/c&gt;, &lt;c&gt;int64&lt;/c&gt;, &lt;c&gt;bool&lt;/c&gt;, &lt;c&gt;float&lt;/c&gt;, &lt;c&gt;decimal&lt;/c&gt;, &lt;c&gt;date&lt;/c&gt;, &lt;c&gt;guid&lt;/c&gt;, &lt;c&gt;string&lt;/c&gt;, &lt;c&gt;int?&lt;/c&gt;, &lt;c&gt;int64?&lt;/c&gt;, &lt;c&gt;bool?&lt;/c&gt;, &lt;c&gt;float?&lt;/c&gt;, &lt;c&gt;decimal?&lt;/c&gt;, &lt;c&gt;date?&lt;/c&gt;, &lt;c&gt;guid?&lt;/c&gt;, &lt;c&gt;int option&lt;/c&gt;, &lt;c&gt;int64 option&lt;/c&gt;, &lt;c&gt;bool option&lt;/c&gt;, &lt;c&gt;float option&lt;/c&gt;, &lt;c&gt;decimal option&lt;/c&gt;, &lt;c&gt;date option&lt;/c&gt;, &lt;c&gt;guid option&lt;/c&gt; and &lt;c&gt;string option&lt;/c&gt;.
+           You can also specify a unit and the name of the column like this: &lt;c&gt;Name (type&amp;lt;unit&amp;gt;)&lt;/c&gt;, or you can override only the name. If you don&#39;t want to specify all the columns, you can reference the columns by name like this: &lt;c&gt;ColumnName=type&lt;/c&gt;.&lt;/param&gt;
+           &lt;param name=&#39;HasHeaders&#39;&gt;Whether the sample contains the names of the columns as its first line.&lt;/param&gt;
+           &lt;param name=&#39;IgnoreErrors&#39;&gt;Whether to ignore rows that have the wrong number of columns or which can&#39;t be parsed using the inferred or specified schema. Otherwise an exception is thrown when these rows are encountered.&lt;/param&gt;
+           &lt;param name=&#39;SkipRows&#39;&gt;Skips the first n rows of the CSV file.&lt;/param&gt;
+           &lt;param name=&#39;AssumeMissingValues&#39;&gt;When set to true, the type provider will assume all columns can have missing values, even if in the provided sample all values are present. Defaults to false.&lt;/param&gt;
+           &lt;param name=&#39;PreferOptionals&#39;&gt;When set to true, inference will prefer to use the option type instead of nullable types, &lt;c&gt;double.NaN&lt;/c&gt; or &lt;c&gt;&quot;&quot;&lt;/c&gt; for missing values. Defaults to false.&lt;/param&gt;
+           &lt;param name=&#39;Quote&#39;&gt;The quotation mark (for surrounding values containing the delimiter). Defaults to &lt;c&gt;&quot;&lt;/c&gt;.&lt;/param&gt;
+           &lt;param name=&#39;MissingValues&#39;&gt;The set of strings recogized as missing values specified as a comma-separated string (e.g., &quot;NA,N/A&quot;). Defaults to &lt;c&gt;NaN,NA,N/A,#N/A,:,-,TBA,TBD&lt;/c&gt;.&lt;/param&gt;
+           &lt;param name=&#39;CacheRows&#39;&gt;Whether the rows should be caches so they can be iterated multiple times. Defaults to true. Disable for large datasets.&lt;/param&gt;
+           &lt;param name=&#39;Culture&#39;&gt;The culture used for parsing numbers and dates. Defaults to the invariant culture.&lt;/param&gt;
+           &lt;param name=&#39;Encoding&#39;&gt;The encoding used to read the sample. You can specify either the character set name or the codepage number. Defaults to UTF8 for files, and to ISO-8859-1 the for HTTP requests, unless &lt;c&gt;charset&lt;/c&gt; is specified in the &lt;c&gt;Content-Type&lt;/c&gt; response header.&lt;/param&gt;
+           &lt;param name=&#39;ResolutionFolder&#39;&gt;A directory that is used when resolving relative file references (at design time and in hosted execution).&lt;/param&gt;
+           &lt;param name=&#39;EmbeddedResource&#39;&gt;When specified, the type provider first attempts to load the sample from the specified resource 
+              (e.g. &#39;MyCompany.MyAssembly, resource_name.csv&#39;). This is useful when exposing types generated by the type provider.&lt;/param&gt;</em></div>
+<div class="fsdocs-tip" id="fs5">val msft : CsvProvider&lt;...&gt;</div>
+<div class="fsdocs-tip" id="fs6">CsvProvider&lt;...&gt;.Load(uri: string) : CsvProvider&lt;...&gt;<br /><em>Loads CSV from the specified uri</em><br />CsvProvider&lt;...&gt;.Load(reader: System.IO.TextReader) : CsvProvider&lt;...&gt;<br /><em>Loads CSV from the specified reader</em><br />CsvProvider&lt;...&gt;.Load(stream: System.IO.Stream) : CsvProvider&lt;...&gt;<br /><em>Loads CSV from the specified stream</em></div>
+<div class="fsdocs-tip" id="fs7">val firstRow : CsvProvider&lt;...&gt;.Row</div>
+<div class="fsdocs-tip" id="fs8">property Runtime.CsvFile.Rows: seq&lt;CsvProvider&lt;...&gt;.Row&gt; with get</div>
+<div class="fsdocs-tip" id="fs9">module Seq<br /><br />from Microsoft.FSharp.Collections</div>
+<div class="fsdocs-tip" id="fs10">val head : source:seq&lt;&#39;T&gt; -&gt; &#39;T</div>
+<div class="fsdocs-tip" id="fs11">val lastDate : System.DateTime</div>
+<div class="fsdocs-tip" id="fs12">property CsvProvider&lt;...&gt;.Row.Date: System.DateTime with get</div>
+<div class="fsdocs-tip" id="fs13">val lastOpen : decimal</div>
+<div class="fsdocs-tip" id="fs14">property CsvProvider&lt;...&gt;.Row.Open: decimal with get</div>
+<div class="fsdocs-tip" id="fs15">val row : CsvProvider&lt;...&gt;.Row</div>
+<div class="fsdocs-tip" id="fs16">val printfn : format:Printf.TextWriterFormat&lt;&#39;T&gt; -&gt; &#39;T</div>
+<div class="fsdocs-tip" id="fs17">property CsvProvider&lt;...&gt;.Row.High: decimal with get</div>
+<div class="fsdocs-tip" id="fs18">property CsvProvider&lt;...&gt;.Row.Low: decimal with get</div>
+<div class="fsdocs-tip" id="fs19">property CsvProvider&lt;...&gt;.Row.Close: decimal with get</div>
+<div class="fsdocs-tip" id="fs20">val small : CsvProvider&lt;...&gt;</div>
+<div class="fsdocs-tip" id="fs21">namespace Microsoft.FSharp.Data.UnitSystems</div>
+<div class="fsdocs-tip" id="fs22">namespace Microsoft.FSharp.Data.UnitSystems.SI</div>
+<div class="fsdocs-tip" id="fs23">namespace Microsoft.FSharp.Data.UnitSystems.SI.UnitNames</div>
+<div class="fsdocs-tip" id="fs24">val speed : decimal&lt;metre/UnitSystems.SI.UnitSymbols.s&gt;</div>
+<div class="fsdocs-tip" id="fs25">property CsvProvider&lt;...&gt;.Row.Distance: decimal&lt;metre&gt; with get</div>
+<div class="fsdocs-tip" id="fs26">property CsvProvider&lt;...&gt;.Row.Time: decimal&lt;UnitSystems.SI.UnitSymbols.s&gt; with get</div>
+<div class="fsdocs-tip" id="fs27">[&lt;Measure&gt;]<br />type metre</div>
+<div class="fsdocs-tip" id="fs28">[&lt;Measure&gt;]<br />type second</div>
+<div class="fsdocs-tip" id="fs29">property CsvProvider&lt;...&gt;.Row.Name: string with get</div>
+<div class="fsdocs-tip" id="fs30">val airQuality : CsvProvider&lt;...&gt;</div>
+<div class="fsdocs-tip" id="fs31">property CsvProvider&lt;...&gt;.Row.Month: int with get</div>
+<div class="fsdocs-tip" id="fs32">property CsvProvider&lt;...&gt;.Row.Temp: int with get</div>
+<div class="fsdocs-tip" id="fs33">property CsvProvider&lt;...&gt;.Row.Ozone: float with get</div>
+<div class="fsdocs-tip" id="fs34">val mortalityNy : CsvProvider&lt;...&gt;</div>
+<div class="fsdocs-tip" id="fs35">val cause : CsvProvider&lt;...&gt;.Row</div>
+<div class="fsdocs-tip" id="fs36">val find : predicate:(&#39;T -&gt; bool) -&gt; source:seq&lt;&#39;T&gt; -&gt; &#39;T</div>
+<div class="fsdocs-tip" id="fs37">val r : CsvProvider&lt;...&gt;.Row</div>
+<div class="fsdocs-tip" id="fs38">property CsvProvider&lt;...&gt;.Row.( Cause of death Code ): string with get</div>
+<div class="fsdocs-tip" id="fs39">property CsvProvider&lt;...&gt;.Row.( Cause of death ): string with get</div>
+<div class="fsdocs-tip" id="fs40">property CsvProvider&lt;...&gt;.Row.County: string with get</div>
+<div class="fsdocs-tip" id="fs41">property CsvProvider&lt;...&gt;.Row.Count: int with get</div>
+<div class="fsdocs-tip" id="fs42">val mean : float</div>
+<div class="fsdocs-tip" id="fs43">val map : mapping:(&#39;T -&gt; &#39;U) -&gt; source:seq&lt;&#39;T&gt; -&gt; seq&lt;&#39;U&gt;</div>
+<div class="fsdocs-tip" id="fs44">val filter : predicate:(&#39;T -&gt; bool) -&gt; source:seq&lt;&#39;T&gt; -&gt; seq&lt;&#39;T&gt;</div>
+<div class="fsdocs-tip" id="fs45">val elem : float</div>
+<div class="fsdocs-tip" id="fs46">val not : value:bool -&gt; bool</div>
+<div class="fsdocs-tip" id="fs47">namespace System</div>
+<div class="fsdocs-tip" id="fs48">[&lt;Struct&gt;]<br />type Double =<br />&#160;&#160;member CompareTo : value: float -&gt; int + 1 overload<br />&#160;&#160;member Equals : obj: float -&gt; bool + 1 overload<br />&#160;&#160;member GetHashCode : unit -&gt; int<br />&#160;&#160;member GetTypeCode : unit -&gt; TypeCode<br />&#160;&#160;member System.IConvertible.ToBoolean : provider: IFormatProvider -&gt; bool<br />&#160;&#160;member System.IConvertible.ToByte : provider: IFormatProvider -&gt; byte<br />&#160;&#160;member System.IConvertible.ToChar : provider: IFormatProvider -&gt; char<br />&#160;&#160;member System.IConvertible.ToDateTime : provider: IFormatProvider -&gt; DateTime<br />&#160;&#160;member System.IConvertible.ToDecimal : provider: IFormatProvider -&gt; decimal<br />&#160;&#160;member System.IConvertible.ToDouble : provider: IFormatProvider -&gt; float<br />&#160;&#160;...</div>
+<div class="fsdocs-tip" id="fs49">System.Double.IsNaN(d: float) : bool</div>
+<div class="fsdocs-tip" id="fs50">val average : source:seq&lt;&#39;T&gt; -&gt; &#39;T (requires member ( + ) and member DivideByInt and member get_Zero)</div>
+<div class="fsdocs-tip" id="fs51">val csv : CsvProvider&lt;...&gt;</div>
+<div class="fsdocs-tip" id="fs52">property CsvProvider&lt;...&gt;.Row.Duration: float&lt;second&gt; with get</div>
+<div class="fsdocs-tip" id="fs53">property CsvProvider&lt;...&gt;.Row.Foo: int with get</div>
+<div class="fsdocs-tip" id="fs54">val defaultArg : arg:&#39;T option -&gt; defaultValue:&#39;T -&gt; &#39;T</div>
+<div class="fsdocs-tip" id="fs55">property CsvProvider&lt;...&gt;.Row.Column3: Option&lt;float&gt; with get</div>
+<div class="fsdocs-tip" id="fs56">val titanic1 : CsvProvider&lt;...&gt;</div>
+<div class="fsdocs-tip" id="fs57">property CsvProvider&lt;...&gt;.Row.( Passenger Class ): int with get</div>
+<div class="fsdocs-tip" id="fs58">property CsvProvider&lt;...&gt;.Row.Fare: decimal with get</div>
+<div class="fsdocs-tip" id="fs59">val titanic2 : CsvProvider&lt;...&gt;</div>
+<div class="fsdocs-tip" id="fs60">property CsvProvider&lt;...&gt;.Row.Fare: float with get</div>
+<div class="fsdocs-tip" id="fs61">member Runtime.CsvFile.Filter : predicate:System.Func&lt;&#39;RowType,bool&gt; -&gt; Runtime.CsvFile&lt;&#39;RowType&gt;</div>
+<div class="fsdocs-tip" id="fs62">property CsvProvider&lt;...&gt;.Row.( Solar.R ): float with get</div>
+
+        </div>
+
+        <!-- BEGIN SEARCH BOX: this adds support for the search box -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/JavaScript-autoComplete/1.0.4/auto-complete.css" />
+        <script type="text/javascript">var fsdocs_search_baseurl = 'https://fsprojects.github.io/FSharp.Data/';</script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.8/lunr.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/JavaScript-autoComplete/1.0.4/auto-complete.min.js"></script>
+        <script type="text/javascript" src="https://fsprojects.github.io/FSharp.Data/content/fsdocs-search.js"></script>
+        <!-- END SEARCH BOX: this adds support for the search box -->
+    </div>
+</body>
+
+</html>
+

@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>WorldBank プロバイダー
+</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="FSharp.Data">
+
+    <link rel="stylesheet" id="theme_link" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.3.1/materia/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script> -->
+
+    <link type="text/css" rel="stylesheet" href="https://fsprojects.github.io/FSharp.Data/content/navbar-fixed-right.css" />
+    <link type="text/css" rel="stylesheet" href="https://fsprojects.github.io/FSharp.Data/content/fsdocs-default.css" />
+    <link type="text/css" rel="stylesheet" href="https://fsprojects.github.io/FSharp.Data/content/fsdocs-custom.css" />
+    <script type="text/javascript" src="https://fsprojects.github.io/FSharp.Data/content/fsdocs-tips.js"></script>
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!-- BEGIN SEARCH BOX: this adds support for the search box -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/JavaScript-autoComplete/1.0.4/auto-complete.css" />
+    <!-- END SEARCH BOX: this adds support for the search box -->
+    
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-md navbar-light bg-secondary fixed-right" id="fsdocs-menu">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <a href="https://fsprojects.github.io/FSharp.Data/"><img id="fsdocs-logo" src="https://fsprojects.github.io/FSharp.Data/img/logo.png" /></a>
+            <!-- BEGIN SEARCH BOX: this adds support for the search box -->
+            <div id="header">
+                <div class="searchbox" id="fsdocs-searchbox">
+                    <label for="search-by">
+                        <i class="fas fa-search"></i>
+                    </label>
+                    <input data-search-input="" id="search-by" type="search" placeholder="Search..." />
+                    <span data-search-clear="">
+                        <i class="fas fa-times"></i>
+                    </span>
+                </div>
+            </div>
+
+            <!-- END SEARCH BOX: this adds support for the search box -->
+            <ul class="navbar-nav">
+                <li class="nav-header">Links</li>
+                <li class="nav-item" id="fsdocs-license-link"><a class="nav-link" href="https://github.com/fsprojects/FSharp.Data/blob/master/LICENSE.md">License (Apache 2.0)</a></li>
+                <li class="nav-item" id="fsdocs-release-notes-link"><a class="nav-link" href="https://github.com/fsprojects/FSharp.Data/blob/master/RELEASE_NOTES.md">Release Notes</a></li>
+                <li class="nav-item" id="fsdocs-repository-link"><a class="nav-link" href="https://github.com/fsprojects/FSharp.Data/">Source Repository</a></li>
+                <li class="nav-header">
+  Documentation
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="https://fsprojects.github.io/FSharp.Data/library/CsvFile.html">
+    CSV Parser
+
+  </a>
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="https://fsprojects.github.io/FSharp.Data/library/CsvProvider.html">
+    CSV Type Provider
+
+  </a>
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="https://fsprojects.github.io/FSharp.Data/library/HtmlCssSelectors.html">
+    HTML CSS selectors
+
+  </a>
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="https://fsprojects.github.io/FSharp.Data/library/HtmlParser.html">
+    HTML Parser
+
+  </a>
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="https://fsprojects.github.io/FSharp.Data/library/HtmlProvider.html">
+    HTML Type Provider
+
+  </a>
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="https://fsprojects.github.io/FSharp.Data/library/Http.html">
+    HTTP Utilities
+
+  </a>
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="https://fsprojects.github.io/FSharp.Data/library/JsonProvider.html">
+    JSON Type Provider
+
+  </a>
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="https://fsprojects.github.io/FSharp.Data/library/JsonValue.html">
+    JSON Parser
+
+  </a>
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="https://fsprojects.github.io/FSharp.Data/library/WorldBank.html">
+    WorldBank Provider
+
+  </a>
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="https://fsprojects.github.io/FSharp.Data/library/XmlProvider.html">
+    XML Type Provider
+
+  </a>
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="https://fsprojects.github.io/FSharp.Data/tutorials/JsonAnonymizer.html">
+    Anonymizing JSON
+
+  </a>
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="https://fsprojects.github.io/FSharp.Data/tutorials/JsonToXml.html">
+    Converting between JSON and XML
+
+  </a>
+</li>
+                <li class="nav-header">
+  API Reference
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="https://fsprojects.github.io/FSharp.Data/reference/index.html">
+    All Namespaces
+  </a>
+</li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="masthead">
+            <h3 class="muted"><a href="https://fsprojects.github.io/FSharp.Data/">FSharp.Data</a></h3>
+        </div>
+        <hr />
+        <div class="container" id="fsdocs-content">
+            <h1><a name="WorldBank-プロバイダー" class="anchor" href="#WorldBank-プロバイダー">WorldBank プロバイダー</a></h1>
+<p><a href="http://www.worldbank.org">世界銀行</a> (World Bank)は世界中の発展途上国に対して、
+経済的かつ技術的な支援を行っている国際組織です。
+また、世界銀行は活動の一環として世界中の各国における発展指標や
+その他のデータを収集しています。
+<a href="http://data.worldbank.org/">data catalog</a> のページではプログラムからも
+アクセスできる8000以上の指標が公開されています。</p>
+<p>WorldBank 型プロバイダーを使うと、F#プログラムやスクリプトから型安全かつ
+簡単な方法でWorldBankのデータにアクセスできるようになります。
+このドキュメントはこの型プロバイダーの基本的な部分のみ説明しています。</p>
+<h2><a name="型プロバイダーの基本" class="anchor" href="#型プロバイダーの基本">型プロバイダーの基本</a></h2>
+<p>以下の例では(F# Interactive上で) <code>FSharp.Data.dll</code> ライブラリを読み込んだ後、
+<code>GetDataContext</code> メソッドを使ってWorldBankへの接続を初期化し、
+イギリスで大学に進学した人口の割合を受信しています；</p>
+<pre class="fssnip highlighted"><code lang="fsharp"><span class="k">open</span> <span onmouseout="hideTip(event, 'fs1', 1)" onmouseover="showTip(event, 'fs1', 1)" class="id">FSharp</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs2', 2)" onmouseover="showTip(event, 'fs2', 2)" class="id">Data</span>
+
+<span class="k">let</span> <span onmouseout="hideTip(event, 'fs3', 3)" onmouseover="showTip(event, 'fs3', 3)" class="id">data</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs4', 4)" onmouseover="showTip(event, 'fs4', 4)" class="rt">WorldBankData</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs5', 5)" onmouseover="showTip(event, 'fs5', 5)" class="id">GetDataContext</span><span class="pn">(</span><span class="pn">)</span>
+
+<span onmouseout="hideTip(event, 'fs3', 6)" onmouseover="showTip(event, 'fs3', 6)" class="id">data</span>
+  <span class="pn">.</span><span class="prop">Countries</span><span class="pn">.</span><span class="prop">``United Kingdom``</span>
+  <span class="pn">.</span><span class="prop">Indicators</span><span class="pn">.</span><span class="id">``Gross capital formation (% of GDP)``</span>
+<span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs6', 7)" onmouseover="showTip(event, 'fs6', 7)" class="m">Seq</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs7', 8)" onmouseover="showTip(event, 'fs7', 8)" class="id">maxBy</span> <span onmouseout="hideTip(event, 'fs8', 9)" onmouseover="showTip(event, 'fs8', 9)" class="fn">fst</span>
+</code></pre>
+<p>データコンテキストが生成されると、WorldBank 型プロバイダーは
+世界銀行で把握されているすべての国のリスト、および
+利用可能なすべての指針のリストを受信します。
+それぞれはプロパティとして参照できるようになっているため、
+自動コンプリートの候補から様々なデータソースが利用できることが確認できるでしょう。
+多くの指標には長い名前がつけられているため、
+名前を <code>\</code>`` で囲む必要があります。</p>
+<p><code>Gross capital formation (% of GDP)</code> プロパティの結果は
+異なる年毎の値のシーケンスです。
+<code>Seq.maxBy fst</code> とすることで直近で利用可能な最新のデータを取得できます。</p>
+<h3><a name="世界銀行のデータをチャート表示する" class="anchor" href="#世界銀行のデータをチャート表示する">世界銀行のデータをチャート表示する</a></h3>
+<h2><a name="世界銀行のデータを非同期的に使う" class="anchor" href="#世界銀行のデータを非同期的に使う">世界銀行のデータを非同期的に使う</a></h2>
+<p>非常に大量のデータをダウンロードする必要がある場合、
+あるいは呼び出し元をブロックせずに処理を実行した場合には、
+F#の非同期ワークフローを使って操作ができればいいなと思うのではないでしょうか。
+F# Dataライブラリには様々なstatic引数を受け取るような
+<code>WorldBankDataProvider</code> 型があります。
+引数 <code>Asyncronous</code> を <code>true</code> にすると、
+すべての操作を非同期的に実行するような型が
+型プロバイダーによって生成されます：</p>
+<pre class="fssnip highlighted"><code lang="fsharp"><span class="k">type</span> <span onmouseout="hideTip(event, 'fs9', 10)" onmouseover="showTip(event, 'fs9', 10)" class="rt">WorldBank</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs10', 11)" onmouseover="showTip(event, 'fs10', 11)" class="rt">WorldBankDataProvider</span><span class="pn">&lt;</span><span class="s">&quot;World Development Indicators&quot;</span><span class="pn">,</span> <span class="fn">Asynchronous</span><span class="o">=</span><span class="k">true</span><span class="pn">&gt;</span>
+<span onmouseout="hideTip(event, 'fs9', 12)" onmouseover="showTip(event, 'fs9', 12)" class="rt">WorldBank</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs11', 13)" onmouseover="showTip(event, 'fs11', 13)" class="id">GetDataContext</span><span class="pn">(</span><span class="pn">)</span>
+</code></pre>
+<p>上のコードではデータソース(一般的に利用可能な指標のコレクション)の名前として
+"World Development Indicators" を指定して、オプション引数 <code>Asynchronous</code> に
+<code>true</code> を設定しています。
+そうするとたとえば <code>Gross capital formation (% of GDP)</code> などのプロパティが
+<code>Async&lt;(int * int)[]&gt;</code> になります。
+これはつまり非同期的に処理を始めることができ、最終的にデータを生成するような
+操作であることを示しています。</p>
+<h3><a name="データを並列にダウンロードする" class="anchor" href="#データを並列にダウンロードする">データを並列にダウンロードする</a></h3>
+<p>非同期バージョンの型プロバイダーのデモとして、
+多数の国における大学進学率を並列にダウンロートしてみます。
+まずデータコンテキストを作成した後に、
+対象とする国を配列として定義します：</p>
+<pre class="fssnip highlighted"><code lang="fsharp"><span class="k">let</span> <span onmouseout="hideTip(event, 'fs12', 14)" onmouseover="showTip(event, 'fs12', 14)" class="id">wb</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs9', 15)" onmouseover="showTip(event, 'fs9', 15)" class="rt">WorldBank</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs11', 16)" onmouseover="showTip(event, 'fs11', 16)" class="id">GetDataContext</span><span class="pn">(</span><span class="pn">)</span>
+
+<span class="c">// 対象とする国のリストを作成</span>
+<span class="k">let</span> <span onmouseout="hideTip(event, 'fs13', 17)" onmouseover="showTip(event, 'fs13', 17)" class="id">countries</span> <span class="o">=</span> 
+ <span class="pn">[|</span> <span onmouseout="hideTip(event, 'fs12', 18)" onmouseover="showTip(event, 'fs12', 18)" class="id">wb</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs14', 19)" onmouseover="showTip(event, 'fs14', 19)" class="prop">Countries</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs15', 20)" onmouseover="showTip(event, 'fs15', 20)" class="id">``Arab World``</span>
+    <span onmouseout="hideTip(event, 'fs12', 21)" onmouseover="showTip(event, 'fs12', 21)" class="id">wb</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs14', 22)" onmouseover="showTip(event, 'fs14', 22)" class="prop">Countries</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs16', 23)" onmouseover="showTip(event, 'fs16', 23)" class="id">``European Union``</span>
+    <span onmouseout="hideTip(event, 'fs12', 24)" onmouseover="showTip(event, 'fs12', 24)" class="id">wb</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs14', 25)" onmouseover="showTip(event, 'fs14', 25)" class="prop">Countries</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs17', 26)" onmouseover="showTip(event, 'fs17', 26)" class="id">Australia</span>
+    <span onmouseout="hideTip(event, 'fs12', 27)" onmouseover="showTip(event, 'fs12', 27)" class="id">wb</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs14', 28)" onmouseover="showTip(event, 'fs14', 28)" class="prop">Countries</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs18', 29)" onmouseover="showTip(event, 'fs18', 29)" class="id">Brazil</span>
+    <span onmouseout="hideTip(event, 'fs12', 30)" onmouseover="showTip(event, 'fs12', 30)" class="id">wb</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs14', 31)" onmouseover="showTip(event, 'fs14', 31)" class="prop">Countries</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs19', 32)" onmouseover="showTip(event, 'fs19', 32)" class="id">Canada</span>
+    <span onmouseout="hideTip(event, 'fs12', 33)" onmouseover="showTip(event, 'fs12', 33)" class="id">wb</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs14', 34)" onmouseover="showTip(event, 'fs14', 34)" class="prop">Countries</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs20', 35)" onmouseover="showTip(event, 'fs20', 35)" class="id">Chile</span>
+    <span onmouseout="hideTip(event, 'fs12', 36)" onmouseover="showTip(event, 'fs12', 36)" class="id">wb</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs14', 37)" onmouseover="showTip(event, 'fs14', 37)" class="prop">Countries</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs21', 38)" onmouseover="showTip(event, 'fs21', 38)" class="id">``Czech Republic``</span>
+    <span onmouseout="hideTip(event, 'fs12', 39)" onmouseover="showTip(event, 'fs12', 39)" class="id">wb</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs14', 40)" onmouseover="showTip(event, 'fs14', 40)" class="prop">Countries</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs22', 41)" onmouseover="showTip(event, 'fs22', 41)" class="id">Denmark</span>
+    <span onmouseout="hideTip(event, 'fs12', 42)" onmouseover="showTip(event, 'fs12', 42)" class="id">wb</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs14', 43)" onmouseover="showTip(event, 'fs14', 43)" class="prop">Countries</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs23', 44)" onmouseover="showTip(event, 'fs23', 44)" class="id">France</span>
+    <span onmouseout="hideTip(event, 'fs12', 45)" onmouseover="showTip(event, 'fs12', 45)" class="id">wb</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs14', 46)" onmouseover="showTip(event, 'fs14', 46)" class="prop">Countries</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs24', 47)" onmouseover="showTip(event, 'fs24', 47)" class="id">Greece</span>
+    <span onmouseout="hideTip(event, 'fs12', 48)" onmouseover="showTip(event, 'fs12', 48)" class="id">wb</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs14', 49)" onmouseover="showTip(event, 'fs14', 49)" class="prop">Countries</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs25', 50)" onmouseover="showTip(event, 'fs25', 50)" class="id">``Low income``</span>
+    <span onmouseout="hideTip(event, 'fs12', 51)" onmouseover="showTip(event, 'fs12', 51)" class="id">wb</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs14', 52)" onmouseover="showTip(event, 'fs14', 52)" class="prop">Countries</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs26', 53)" onmouseover="showTip(event, 'fs26', 53)" class="id">``High income``</span>
+    <span onmouseout="hideTip(event, 'fs12', 54)" onmouseover="showTip(event, 'fs12', 54)" class="id">wb</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs14', 55)" onmouseover="showTip(event, 'fs14', 55)" class="prop">Countries</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs27', 56)" onmouseover="showTip(event, 'fs27', 56)" class="id">``United Kingdom``</span>
+    <span onmouseout="hideTip(event, 'fs12', 57)" onmouseover="showTip(event, 'fs12', 57)" class="id">wb</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs14', 58)" onmouseover="showTip(event, 'fs14', 58)" class="prop">Countries</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs28', 59)" onmouseover="showTip(event, 'fs28', 59)" class="id">``United States``</span> <span class="pn">|]</span>
+</code></pre>
+<p>データを並列にダウンロードするには、非同期計算のリストを作成した後、
+それらを <code>Async.Parallel</code> で組み合わせ、
+(1つになった)計算を実行してすべてのダウンロード処理を行います：</p>
+<pre class="fssnip highlighted"><code lang="fsharp"><span class="pn">[</span> <span class="k">for</span> <span onmouseout="hideTip(event, 'fs29', 60)" onmouseover="showTip(event, 'fs29', 60)" class="fn">c</span> <span class="k">in</span> <span onmouseout="hideTip(event, 'fs13', 61)" onmouseover="showTip(event, 'fs13', 61)" class="id">countries</span> <span class="k">-&gt;</span>
+    <span onmouseout="hideTip(event, 'fs29', 62)" onmouseover="showTip(event, 'fs29', 62)" class="fn">c</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs30', 63)" onmouseover="showTip(event, 'fs30', 63)" class="prop">Indicators</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs31', 64)" onmouseover="showTip(event, 'fs31', 64)" class="id">``Gross capital formation (% of GDP)``</span> <span class="pn">]</span>
+<span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs32', 65)" onmouseover="showTip(event, 'fs32', 65)" class="rt">Async</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs33', 66)" onmouseover="showTip(event, 'fs33', 66)" class="id">Parallel</span>
+<span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs32', 67)" onmouseover="showTip(event, 'fs32', 67)" class="rt">Async</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs34', 68)" onmouseover="showTip(event, 'fs34', 68)" class="id">RunSynchronously</span>
+</code></pre>
+<h2><a name="関連する記事" class="anchor" href="#関連する記事">関連する記事</a></h2>
+<ul>
+<li><a href="../../reference/fsharp-data-worldbankdataprovider.html">API リファレンス: WorldBankDataProvider 型プロバイダー</a></li>
+</ul>
+
+            <div class="fsdocs-tip" id="fs1">Multiple items<br />namespace FSharp<br /><br />--------------------<br />namespace Microsoft.FSharp</div>
+<div class="fsdocs-tip" id="fs2">Multiple items<br />namespace FSharp.Data<br /><br />--------------------<br />namespace Microsoft.FSharp.Data</div>
+<div class="fsdocs-tip" id="fs3">val data : WorldBankData.ServiceTypes.WorldBankDataService</div>
+<div class="fsdocs-tip" id="fs4">type WorldBankData =<br />&#160;&#160;static member GetDataContext : unit -&gt; WorldBankDataService<br />&#160;&#160;nested type ServiceTypes</div>
+<div class="fsdocs-tip" id="fs5">WorldBankData.GetDataContext() : WorldBankData.ServiceTypes.WorldBankDataService</div>
+<div class="fsdocs-tip" id="fs6">module Seq<br /><br />from Microsoft.FSharp.Collections</div>
+<div class="fsdocs-tip" id="fs7">val maxBy : projection:(&#39;T -&gt; &#39;U) -&gt; source:seq&lt;&#39;T&gt; -&gt; &#39;T (requires comparison)</div>
+<div class="fsdocs-tip" id="fs8">val fst : tuple:(&#39;T1 * &#39;T2) -&gt; &#39;T1</div>
+<div class="fsdocs-tip" id="fs9">type WorldBank = WorldBankDataProvider&lt;...&gt;</div>
+<div class="fsdocs-tip" id="fs10">type WorldBankDataProvider =<br /><em>&lt;summary&gt;Typed representation of WorldBank data with additional configuration parameters. See http://www.worldbank.org for terms and conditions.&lt;/summary&gt;
+                        &lt;param name=&#39;Sources&#39;&gt;The World Bank data sources to include, separated by semicolons. Defaults to &lt;c&gt;World Development Indicators;Global Financial Development&lt;/c&gt;.
+                        If an empty string is specified, includes all data sources.&lt;/param&gt;
+                        &lt;param name=&#39;Asynchronous&#39;&gt;Generate asynchronous calls. Defaults to false.&lt;/param&gt;</em></div>
+<div class="fsdocs-tip" id="fs11">WorldBankDataProvider&lt;...&gt;.GetDataContext() : WorldBankDataProvider&lt;...&gt;.ServiceTypes.WorldBankDataService</div>
+<div class="fsdocs-tip" id="fs12">val wb : WorldBankDataProvider&lt;...&gt;.ServiceTypes.WorldBankDataService</div>
+<div class="fsdocs-tip" id="fs13">val countries : WorldBankDataProvider&lt;...&gt;.ServiceTypes.Country []</div>
+<div class="fsdocs-tip" id="fs14">property WorldBankDataProvider&lt;...&gt;.ServiceTypes.WorldBankDataService.Countries: WorldBankDataProvider&lt;...&gt;.ServiceTypes.Countries with get</div>
+<div class="fsdocs-tip" id="fs15">property WorldBankDataProvider&lt;...&gt;.ServiceTypes.Countries.( Arab World ): WorldBankDataProvider&lt;...&gt;.ServiceTypes.Country with get<br /><em>The data for country &#39;Arab World&#39;</em></div>
+<div class="fsdocs-tip" id="fs16">property WorldBankDataProvider&lt;...&gt;.ServiceTypes.Countries.( European Union ): WorldBankDataProvider&lt;...&gt;.ServiceTypes.Country with get<br /><em>The data for country &#39;European Union&#39;</em></div>
+<div class="fsdocs-tip" id="fs17">property WorldBankDataProvider&lt;...&gt;.ServiceTypes.Countries.Australia: WorldBankDataProvider&lt;...&gt;.ServiceTypes.Country with get<br /><em>The data for country &#39;Australia&#39;</em></div>
+<div class="fsdocs-tip" id="fs18">property WorldBankDataProvider&lt;...&gt;.ServiceTypes.Countries.Brazil: WorldBankDataProvider&lt;...&gt;.ServiceTypes.Country with get<br /><em>The data for country &#39;Brazil&#39;</em></div>
+<div class="fsdocs-tip" id="fs19">property WorldBankDataProvider&lt;...&gt;.ServiceTypes.Countries.Canada: WorldBankDataProvider&lt;...&gt;.ServiceTypes.Country with get<br /><em>The data for country &#39;Canada&#39;</em></div>
+<div class="fsdocs-tip" id="fs20">property WorldBankDataProvider&lt;...&gt;.ServiceTypes.Countries.Chile: WorldBankDataProvider&lt;...&gt;.ServiceTypes.Country with get<br /><em>The data for country &#39;Chile&#39;</em></div>
+<div class="fsdocs-tip" id="fs21">property WorldBankDataProvider&lt;...&gt;.ServiceTypes.Countries.( Czech Republic ): WorldBankDataProvider&lt;...&gt;.ServiceTypes.Country with get<br /><em>The data for country &#39;Czech Republic&#39;</em></div>
+<div class="fsdocs-tip" id="fs22">property WorldBankDataProvider&lt;...&gt;.ServiceTypes.Countries.Denmark: WorldBankDataProvider&lt;...&gt;.ServiceTypes.Country with get<br /><em>The data for country &#39;Denmark&#39;</em></div>
+<div class="fsdocs-tip" id="fs23">property WorldBankDataProvider&lt;...&gt;.ServiceTypes.Countries.France: WorldBankDataProvider&lt;...&gt;.ServiceTypes.Country with get<br /><em>The data for country &#39;France&#39;</em></div>
+<div class="fsdocs-tip" id="fs24">property WorldBankDataProvider&lt;...&gt;.ServiceTypes.Countries.Greece: WorldBankDataProvider&lt;...&gt;.ServiceTypes.Country with get<br /><em>The data for country &#39;Greece&#39;</em></div>
+<div class="fsdocs-tip" id="fs25">property WorldBankDataProvider&lt;...&gt;.ServiceTypes.Countries.( Low income ): WorldBankDataProvider&lt;...&gt;.ServiceTypes.Country with get<br /><em>The data for country &#39;Low income&#39;</em></div>
+<div class="fsdocs-tip" id="fs26">property WorldBankDataProvider&lt;...&gt;.ServiceTypes.Countries.( High income ): WorldBankDataProvider&lt;...&gt;.ServiceTypes.Country with get<br /><em>The data for country &#39;High income&#39;</em></div>
+<div class="fsdocs-tip" id="fs27">property WorldBankDataProvider&lt;...&gt;.ServiceTypes.Countries.( United Kingdom ): WorldBankDataProvider&lt;...&gt;.ServiceTypes.Country with get<br /><em>The data for country &#39;United Kingdom&#39;</em></div>
+<div class="fsdocs-tip" id="fs28">property WorldBankDataProvider&lt;...&gt;.ServiceTypes.Countries.( United States ): WorldBankDataProvider&lt;...&gt;.ServiceTypes.Country with get<br /><em>The data for country &#39;United States&#39;</em></div>
+<div class="fsdocs-tip" id="fs29">val c : WorldBankDataProvider&lt;...&gt;.ServiceTypes.Country</div>
+<div class="fsdocs-tip" id="fs30">property WorldBankDataProvider&lt;...&gt;.ServiceTypes.Country.Indicators: WorldBankDataProvider&lt;...&gt;.ServiceTypes.Indicators with get<br /><em>&lt;summary&gt;The indicators for the country&lt;/summary&gt;</em></div>
+<div class="fsdocs-tip" id="fs31">property WorldBankDataProvider&lt;...&gt;.ServiceTypes.Indicators.( Gross capital formation (% of GDP) ): Async&lt;Runtime.WorldBank.Indicator&gt; with get<br /><em>Gross capital formation (formerly gross domestic investment) consists of outlays on additions to the fixed assets of the economy plus net changes in the level of inventories. Fixed assets include land improvements (fences, ditches, drains, and so on); plant, machinery, and equipment purchases; and the construction of roads, railways, and the like, including schools, offices, hospitals, private residential dwellings, and commercial and industrial buildings. Inventories are stocks of goods held by firms to meet temporary or unexpected fluctuations in production or sales, and &quot;work in progress.&quot; According to the 1993 SNA, net acquisitions of valuables are also considered capital formation.</em></div>
+<div class="fsdocs-tip" id="fs32">Multiple items<br />type Async =<br />&#160;&#160;static member AsBeginEnd : computation:(&#39;Arg -&gt; Async&lt;&#39;T&gt;) -&gt; (&#39;Arg * AsyncCallback * obj -&gt; IAsyncResult) * (IAsyncResult -&gt; &#39;T) * (IAsyncResult -&gt; unit)<br />&#160;&#160;static member AwaitEvent : event:IEvent&lt;&#39;Del,&#39;T&gt; * ?cancelAction:(unit -&gt; unit) -&gt; Async&lt;&#39;T&gt; (requires delegate and &#39;Del :&gt; Delegate)<br />&#160;&#160;static member AwaitIAsyncResult : iar:IAsyncResult * ?millisecondsTimeout:int -&gt; Async&lt;bool&gt;<br />&#160;&#160;static member AwaitTask : task:Task&lt;&#39;T&gt; -&gt; Async&lt;&#39;T&gt; + 1 overload<br />&#160;&#160;static member AwaitWaitHandle : waitHandle:WaitHandle * ?millisecondsTimeout:int -&gt; Async&lt;bool&gt;<br />&#160;&#160;static member CancelDefaultToken : unit -&gt; unit<br />&#160;&#160;static member Catch : computation:Async&lt;&#39;T&gt; -&gt; Async&lt;Choice&lt;&#39;T,exn&gt;&gt;<br />&#160;&#160;static member Choice : computations:seq&lt;Async&lt;&#39;T option&gt;&gt; -&gt; Async&lt;&#39;T option&gt;<br />&#160;&#160;static member FromBeginEnd : beginAction:(AsyncCallback * obj -&gt; IAsyncResult) * endAction:(IAsyncResult -&gt; &#39;T) * ?cancelAction:(unit -&gt; unit) -&gt; Async&lt;&#39;T&gt; + 3 overloads<br />&#160;&#160;static member FromContinuations : callback:((&#39;T -&gt; unit) * (exn -&gt; unit) * (OperationCanceledException -&gt; unit) -&gt; unit) -&gt; Async&lt;&#39;T&gt;<br />&#160;&#160;...<br /><br />--------------------<br />type Async&lt;&#39;T&gt; =</div>
+<div class="fsdocs-tip" id="fs33">static member Async.Parallel : computations:seq&lt;Async&lt;&#39;T&gt;&gt; -&gt; Async&lt;&#39;T []&gt;<br />static member Async.Parallel : computations:seq&lt;Async&lt;&#39;T&gt;&gt; * ?maxDegreeOfParallelism:int -&gt; Async&lt;&#39;T []&gt;</div>
+<div class="fsdocs-tip" id="fs34">static member Async.RunSynchronously : computation:Async&lt;&#39;T&gt; * ?timeout:int * ?cancellationToken:System.Threading.CancellationToken -&gt; &#39;T</div>
+
+        </div>
+
+        <!-- BEGIN SEARCH BOX: this adds support for the search box -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/JavaScript-autoComplete/1.0.4/auto-complete.css" />
+        <script type="text/javascript">var fsdocs_search_baseurl = 'https://fsprojects.github.io/FSharp.Data/';</script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.8/lunr.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/JavaScript-autoComplete/1.0.4/auto-complete.min.js"></script>
+        <script type="text/javascript" src="https://fsprojects.github.io/FSharp.Data/content/fsdocs-search.js"></script>
+        <!-- END SEARCH BOX: this adds support for the search box -->
+    </div>
+</body>
+
+</html>
+

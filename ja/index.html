@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>データアクセス用ライブラリ
+</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="FSharp.Data">
+
+    <link rel="stylesheet" id="theme_link" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.3.1/materia/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script> -->
+
+    <link type="text/css" rel="stylesheet" href="https://fsprojects.github.io/FSharp.Data/content/navbar-fixed-right.css" />
+    <link type="text/css" rel="stylesheet" href="https://fsprojects.github.io/FSharp.Data/content/fsdocs-default.css" />
+    <link type="text/css" rel="stylesheet" href="https://fsprojects.github.io/FSharp.Data/content/fsdocs-custom.css" />
+    <script type="text/javascript" src="https://fsprojects.github.io/FSharp.Data/content/fsdocs-tips.js"></script>
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!-- BEGIN SEARCH BOX: this adds support for the search box -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/JavaScript-autoComplete/1.0.4/auto-complete.css" />
+    <!-- END SEARCH BOX: this adds support for the search box -->
+    
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-md navbar-light bg-secondary fixed-right" id="fsdocs-menu">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <a href="https://fsprojects.github.io/FSharp.Data/"><img id="fsdocs-logo" src="https://fsprojects.github.io/FSharp.Data/img/logo.png" /></a>
+            <!-- BEGIN SEARCH BOX: this adds support for the search box -->
+            <div id="header">
+                <div class="searchbox" id="fsdocs-searchbox">
+                    <label for="search-by">
+                        <i class="fas fa-search"></i>
+                    </label>
+                    <input data-search-input="" id="search-by" type="search" placeholder="Search..." />
+                    <span data-search-clear="">
+                        <i class="fas fa-times"></i>
+                    </span>
+                </div>
+            </div>
+
+            <!-- END SEARCH BOX: this adds support for the search box -->
+            <ul class="navbar-nav">
+                <li class="nav-header">Links</li>
+                <li class="nav-item" id="fsdocs-license-link"><a class="nav-link" href="https://github.com/fsprojects/FSharp.Data/blob/master/LICENSE.md">License (Apache 2.0)</a></li>
+                <li class="nav-item" id="fsdocs-release-notes-link"><a class="nav-link" href="https://github.com/fsprojects/FSharp.Data/blob/master/RELEASE_NOTES.md">Release Notes</a></li>
+                <li class="nav-item" id="fsdocs-repository-link"><a class="nav-link" href="https://github.com/fsprojects/FSharp.Data/">Source Repository</a></li>
+                <li class="nav-header">
+  Documentation
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="https://fsprojects.github.io/FSharp.Data/library/CsvFile.html">
+    CSV Parser
+
+  </a>
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="https://fsprojects.github.io/FSharp.Data/library/CsvProvider.html">
+    CSV Type Provider
+
+  </a>
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="https://fsprojects.github.io/FSharp.Data/library/HtmlCssSelectors.html">
+    HTML CSS selectors
+
+  </a>
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="https://fsprojects.github.io/FSharp.Data/library/HtmlParser.html">
+    HTML Parser
+
+  </a>
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="https://fsprojects.github.io/FSharp.Data/library/HtmlProvider.html">
+    HTML Type Provider
+
+  </a>
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="https://fsprojects.github.io/FSharp.Data/library/Http.html">
+    HTTP Utilities
+
+  </a>
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="https://fsprojects.github.io/FSharp.Data/library/JsonProvider.html">
+    JSON Type Provider
+
+  </a>
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="https://fsprojects.github.io/FSharp.Data/library/JsonValue.html">
+    JSON Parser
+
+  </a>
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="https://fsprojects.github.io/FSharp.Data/library/WorldBank.html">
+    WorldBank Provider
+
+  </a>
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="https://fsprojects.github.io/FSharp.Data/library/XmlProvider.html">
+    XML Type Provider
+
+  </a>
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="https://fsprojects.github.io/FSharp.Data/tutorials/JsonAnonymizer.html">
+    Anonymizing JSON
+
+  </a>
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="https://fsprojects.github.io/FSharp.Data/tutorials/JsonToXml.html">
+    Converting between JSON and XML
+
+  </a>
+</li>
+                <li class="nav-header">
+  API Reference
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="https://fsprojects.github.io/FSharp.Data/reference/index.html">
+    All Namespaces
+  </a>
+</li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="masthead">
+            <h3 class="muted"><a href="https://fsprojects.github.io/FSharp.Data/">FSharp.Data</a></h3>
+        </div>
+        <hr />
+        <div class="container" id="fsdocs-content">
+            <h1><a name="データアクセス用ライブラリ" class="anchor" href="#データアクセス用ライブラリ">データアクセス用ライブラリ</a></h1>
+<p>FSharp.Data ライブラリ (<code>FSharp.Data.dll</code>) にはF#アプリケーションやスクリプトから
+データにアクセスする際に必要となるすべての機能が揃えられています。
+このライブラリには構造的な形式を持ったファイル（CSVやJSON、XML）を
+操作するためのF#型プロバイダや、WorldBankやFreebaseのデータにアクセスするための
+型プロバイダがあります。
+また、JSONやCSVファイルを解析する機能や、
+HTTPリクエストを送信するための機能もあります。</p>
+<div class="container-fluid" style="margin:15px 0px 15px 0px;">
+    <div class="row-fluid">
+        <div class="span1"></div>
+        <div class="span10" id="anim-holder">
+            <div id="wbtn" style="right:10px">WorldBank</div>
+            <div id="jbtn" style="right:110px">JSON</div>
+            <div id="cbtn" style="right:210px">CSV</div>
+            <a id="lnk" href="../images/start.png"><img id="anim" src="../images/start.png" /></a>
+        </div>
+        <div class="span1"></div>
+    </div> 
+</div>
+<script type="text/javascript">
+$(function(){
+  var wi = new Image();
+  var ji = new Image();
+  var ci = new Image();
+  wi.src ='../images/wb.gif';
+  ji.src ='../images/json.gif';
+  ci.src ='../images/csv.gif';
+  $('#wbtn').click(function(){ $('#anim').attr('src',wi.src); $('#lnk').attr('href',wi.src); });
+  $('#jbtn').click(function(){ $('#anim').attr('src',ji.src); $('#lnk').attr('href',ji.src); });
+  $('#cbtn').click(function(){ $('#anim').attr('src',ci.src); $('#lnk').attr('href',ci.src); });
+});</script>
+<p>FSharp.Data Libraryは <a href="https://nuget.org/packages/FSharp.Data">NuGetの
+FSharp.Dataパッケージ</a>として公開されています。
+ライブラリをインストールするには、
+<a href="http://docs.nuget.org/docs/start-here/using-the-package-manager-console">
+パッケージ マネージャー コンソール</a>上から以下のコマンドを実行します：
+<code>Install-Package FSharp.Data</code>.
+あるいは <a href="https://github.com/fsharp/FSharp.Data/zipball/master">ソースコードをZIPファイルとしてダウンロード</a> したり、
+<a href="https://github.com/fsharp/FSharp.Data/zipball/release">コンパイル済みバイナリ</a> をZIPファイルとして
+ダウンロードすることもできます。</p>
+<h2><a name="ドキュメント" class="anchor" href="#ドキュメント">ドキュメント</a></h2>
+<p>このライブラリの重要な利点の1つとしては、包括的なドキュメントが
+揃えられているということです。
+ドキュメントはいずれも <a href="https://github.com/fsharp/FSharp.Data/tree/master/samples">samples フォルダ</a> 内にある <code>*.fsx</code>
+ファイルから自動生成されています。
+もしも誤字脱字など見つけた場合には是非pullリクエストを投げてください！</p>
+<ul>
+<li>
+<a href="fsharpdata.html">FSharp.Data</a> はドキュメントのホームページで、
+それぞれの型プロバイダ（CSVやXML、JSON、WorldBank、Freebase）に関する
+ドキュメントへのリンクが揃っています。
+また、 <code>FSharp.Data.dll</code> 内のpublic型に関するドキュメントへのリンクもあります。
+</li>
+</ul>
+<h2><a name="貢献方法" class="anchor" href="#貢献方法">貢献方法</a></h2>
+<p>プロジェクトは <a href="https://github.com/fsharp/FSharp.Data">GitHub</a> 上でホストされており、
+<a href="https://github.com/fsharp/FSharp.Data/issues">Issue(問題)を報告</a> したり、プロジェクトをフォークして
+pullリクエストを投げたりすることができます。
+公開APIを独自に追加した場合、是非 <a href="https://github.com/fsharp/FSharp.Data/tree/master/samples">samples</a> にもそれを反映して、
+ドキュメント化されるようにしてください。</p>
+<ul>
+<li>
+<p>不具合あるいはライブラリに追加する機能に関する議論がある場合には
+GitHub上で <a href="https://github.com/fsharp/FSharp.Data/issues">不具合または新機能</a> に関するNew Issueを投稿するか、
+<a href="http://groups.google.com/group/fsharp-opensource">F# オープンソース</a> (英語)のメーリングリストに
+メールを投げてください。</p>
+</li>
+<li>
+<p>ライブラリのアーキテクチャや構成、その他の話題
+(たとえばWindows PhoneやSilverlightなどのためのポータブルライブラリサポート)
+など、より詳しい話題については <a href="contributing.html">FSharp.Data に貢献する</a>
+のページを参照してください。</p>
+</li>
+</ul>
+<h3><a name="ライブラリの方針" class="anchor" href="#ライブラリの方針">ライブラリの方針</a></h3>
+<p>このライブラリは構造的なドキュメントやその他のデータソースに対して、
+単純かつ読み取り専用のアクセスをサポートすることに重点を置いています。
+F#型プロバイダに関する包括的なコレクションとなることを意図しているわけではありません
+（一般的にはF#型プロバイダには様々な用途があります）。
+さらに、このライブラリでは（現時点では）ドキュメントを作成したり、
+変更したりするようなAPIは公開されていません。</p>
+<h3><a name="ライブラリのライセンス" class="anchor" href="#ライブラリのライセンス">ライブラリのライセンス</a></h3>
+<p>ライブラリは Apache 2.0ライセンスの元に公開されています。
+詳細についてはGitHubレポジトリ内の <a href="https://github.com/fsharp/FSharp.Data/blob/master/LICENSE.md">ライセンスファイル</a> を参照してください。
+要約すると、このライブラリは自由に商用利用したり、
+派生のライブラリを作成したり、変更したりすることができるということです。</p>
+
+            
+        </div>
+
+        <!-- BEGIN SEARCH BOX: this adds support for the search box -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/JavaScript-autoComplete/1.0.4/auto-complete.css" />
+        <script type="text/javascript">var fsdocs_search_baseurl = 'https://fsprojects.github.io/FSharp.Data/';</script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.8/lunr.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/JavaScript-autoComplete/1.0.4/auto-complete.min.js"></script>
+        <script type="text/javascript" src="https://fsprojects.github.io/FSharp.Data/content/fsdocs-search.js"></script>
+        <!-- END SEARCH BOX: this adds support for the search box -->
+    </div>
+</body>
+
+</html>
+

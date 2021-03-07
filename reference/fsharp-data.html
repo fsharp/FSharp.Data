@@ -1,0 +1,1094 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>FSharp.Data</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="FSharp.Data">
+
+    <link rel="stylesheet" id="theme_link" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.3.1/materia/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script> -->
+
+    <link type="text/css" rel="stylesheet" href="https://fsprojects.github.io/FSharp.Data/content/navbar-fixed-right.css" />
+    <link type="text/css" rel="stylesheet" href="https://fsprojects.github.io/FSharp.Data/content/fsdocs-default.css" />
+    <link type="text/css" rel="stylesheet" href="https://fsprojects.github.io/FSharp.Data/content/fsdocs-custom.css" />
+    <script type="text/javascript" src="https://fsprojects.github.io/FSharp.Data/content/fsdocs-tips.js"></script>
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!-- BEGIN SEARCH BOX: this adds support for the search box -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/JavaScript-autoComplete/1.0.4/auto-complete.css" />
+    <!-- END SEARCH BOX: this adds support for the search box -->
+    
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-md navbar-light bg-secondary fixed-right" id="fsdocs-menu">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <a href="https://fsprojects.github.io/FSharp.Data/"><img id="fsdocs-logo" src="https://fsprojects.github.io/FSharp.Data/img/logo.png" /></a>
+            <!-- BEGIN SEARCH BOX: this adds support for the search box -->
+            <div id="header">
+                <div class="searchbox" id="fsdocs-searchbox">
+                    <label for="search-by">
+                        <i class="fas fa-search"></i>
+                    </label>
+                    <input data-search-input="" id="search-by" type="search" placeholder="Search..." />
+                    <span data-search-clear="">
+                        <i class="fas fa-times"></i>
+                    </span>
+                </div>
+            </div>
+
+            <!-- END SEARCH BOX: this adds support for the search box -->
+            <ul class="navbar-nav">
+                <li class="nav-header">Links</li>
+                <li class="nav-item" id="fsdocs-license-link"><a class="nav-link" href="https://github.com/fsprojects/FSharp.Data/blob/master/LICENSE.md">License (Apache 2.0)</a></li>
+                <li class="nav-item" id="fsdocs-release-notes-link"><a class="nav-link" href="https://github.com/fsprojects/FSharp.Data/blob/master/RELEASE_NOTES.md">Release Notes</a></li>
+                <li class="nav-item" id="fsdocs-repository-link"><a class="nav-link" href="https://github.com/fsprojects/FSharp.Data/">Source Repository</a></li>
+                <li class="nav-header">
+  Documentation
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="https://fsprojects.github.io/FSharp.Data/library/CsvFile.html">
+    CSV Parser
+
+  </a>
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="https://fsprojects.github.io/FSharp.Data/library/CsvProvider.html">
+    CSV Type Provider
+
+  </a>
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="https://fsprojects.github.io/FSharp.Data/library/HtmlCssSelectors.html">
+    HTML CSS selectors
+
+  </a>
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="https://fsprojects.github.io/FSharp.Data/library/HtmlParser.html">
+    HTML Parser
+
+  </a>
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="https://fsprojects.github.io/FSharp.Data/library/HtmlProvider.html">
+    HTML Type Provider
+
+  </a>
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="https://fsprojects.github.io/FSharp.Data/library/Http.html">
+    HTTP Utilities
+
+  </a>
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="https://fsprojects.github.io/FSharp.Data/library/JsonProvider.html">
+    JSON Type Provider
+
+  </a>
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="https://fsprojects.github.io/FSharp.Data/library/JsonValue.html">
+    JSON Parser
+
+  </a>
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="https://fsprojects.github.io/FSharp.Data/library/WorldBank.html">
+    WorldBank Provider
+
+  </a>
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="https://fsprojects.github.io/FSharp.Data/library/XmlProvider.html">
+    XML Type Provider
+
+  </a>
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="https://fsprojects.github.io/FSharp.Data/tutorials/JsonAnonymizer.html">
+    Anonymizing JSON
+
+  </a>
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="https://fsprojects.github.io/FSharp.Data/tutorials/JsonToXml.html">
+    Converting between JSON and XML
+
+  </a>
+</li>
+                <li class="nav-header">
+  API Reference
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="https://fsprojects.github.io/FSharp.Data/reference/index.html">
+    All Namespaces
+  </a>
+</li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="masthead">
+            <h3 class="muted"><a href="https://fsprojects.github.io/FSharp.Data/">FSharp.Data</a></h3>
+        </div>
+        <hr />
+        <div class="container" id="fsdocs-content">
+            <div>
+  <h2 id="fsharp-data">
+    FSharp.Data Namespace
+  </h2>
+  <p>
+    Contains the primary types for the FSharp.Data package.
+  </p>
+  <table class="table outer-list fsdocs-entity-list">
+    <thead>
+      <tr>
+        <td>
+          Type/Module
+        </td>
+        <td>
+          Description
+        </td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="fsdocs-entity-name">
+          <p>
+            <a name="CssSelectorExtensions">
+              <a href="https://fsprojects.github.io/FSharp.Data/reference/fsharp-data-cssselectorextensions.html">
+                CssSelectorExtensions
+              </a>
+            </a>
+          </p>
+        </td>
+        <td class="fsdocs-xmldoc">
+          <p>
+            <a href="https://github.com/fsprojects/FSharp.Data/tree/master/src/Html/HtmlCssSelectorExtensions.fs#L7-7" class="fsdocs-source-link">
+              <img src="https://fsprojects.github.io/FSharp.Data/content/img/github.png" class="normal"/>
+              <img src="https://fsprojects.github.io/FSharp.Data/content/img/github-blue.png" class="hover"/>
+            </a>
+            
+          </p>
+        </td>
+      </tr>
+      <tr>
+        <td class="fsdocs-entity-name">
+          <p>
+            <a name="CsvExtensions">
+              <a href="https://fsprojects.github.io/FSharp.Data/reference/fsharp-data-csvextensionsmodule.html">
+                CsvExtensions
+              </a>
+            </a>
+          </p>
+        </td>
+        <td class="fsdocs-xmldoc">
+          <p>
+            <a href="https://github.com/fsprojects/FSharp.Data/tree/master/src/Csv/CsvExtensions.fs#L80-80" class="fsdocs-source-link">
+              <img src="https://fsprojects.github.io/FSharp.Data/content/img/github.png" class="normal"/>
+              <img src="https://fsprojects.github.io/FSharp.Data/content/img/github-blue.png" class="hover"/>
+            </a>
+            
+ Provides the dynamic operator for getting column values by name from CSV rows
+
+          </p>
+        </td>
+      </tr>
+      <tr>
+        <td class="fsdocs-entity-name">
+          <p>
+            <a name="CsvFile">
+              <a href="https://fsprojects.github.io/FSharp.Data/reference/fsharp-data-csvfile.html">
+                CsvFile
+              </a>
+            </a>
+          </p>
+        </td>
+        <td class="fsdocs-xmldoc">
+          <p>
+            <a href="https://github.com/fsprojects/FSharp.Data/tree/master/src/Csv/CsvFile.fs#L39-39" class="fsdocs-source-link">
+              <img src="https://fsprojects.github.io/FSharp.Data/content/img/github.png" class="normal"/>
+              <img src="https://fsprojects.github.io/FSharp.Data/content/img/github-blue.png" class="hover"/>
+            </a>
+            
+ Represents a CSV file. The lines are read on demand from `reader`.
+ Columns are delimited by one of the chars passed by `separators` (defaults to just `,`), and
+ to escape the separator chars, the `quote` character will be used (defaults to `"`).
+ If `hasHeaders` is true (the default), the first line read by `reader` will not be considered part of data.
+ If `ignoreErrors` is true (the default is false), rows with a different number of columns from the header row
+ (or the first row if headers are not present) will be ignored.
+ The first `skipRows` lines will be skipped.
+
+          </p>
+        </td>
+      </tr>
+      <tr>
+        <td class="fsdocs-entity-name">
+          <p>
+            <a name="CsvProvider">
+              <a href="https://fsprojects.github.io/FSharp.Data/reference/fsharp-data-csvprovider.html">
+                CsvProvider
+              </a>
+            </a>
+          </p>
+        </td>
+        <td class="fsdocs-xmldoc">
+          <p>
+            <a href="https://github.com/fsprojects/FSharp.Data/tree/master/startup#L1-1" class="fsdocs-source-link">
+              <img src="https://fsprojects.github.io/FSharp.Data/content/img/github.png" class="normal"/>
+              <img src="https://fsprojects.github.io/FSharp.Data/content/img/github-blue.png" class="hover"/>
+            </a>
+            Typed representation of a CSV file.
+          </p>
+        </td>
+      </tr>
+      <tr>
+        <td class="fsdocs-entity-name">
+          <p>
+            <a name="CsvRow">
+              <a href="https://fsprojects.github.io/FSharp.Data/reference/fsharp-data-csvrow.html">
+                CsvRow
+              </a>
+            </a>
+          </p>
+        </td>
+        <td class="fsdocs-xmldoc">
+          <p>
+            <a href="https://github.com/fsprojects/FSharp.Data/tree/master/src/Csv/CsvFile.fs#L17-17" class="fsdocs-source-link">
+              <img src="https://fsprojects.github.io/FSharp.Data/content/img/github.png" class="normal"/>
+              <img src="https://fsprojects.github.io/FSharp.Data/content/img/github-blue.png" class="hover"/>
+            </a>
+            
+ Represents a CSV row.
+
+          </p>
+        </td>
+      </tr>
+      <tr>
+        <td class="fsdocs-entity-name">
+          <p>
+            <a name="HtmlActivePatterns">
+              <a href="https://fsprojects.github.io/FSharp.Data/reference/fsharp-data-htmlactivepatterns.html">
+                HtmlActivePatterns
+              </a>
+            </a>
+          </p>
+        </td>
+        <td class="fsdocs-xmldoc">
+          <p>
+            <a href="https://github.com/fsprojects/FSharp.Data/tree/master/src/Html/HtmlActivePatterns.fs#L3-3" class="fsdocs-source-link">
+              <img src="https://fsprojects.github.io/FSharp.Data/content/img/github.png" class="normal"/>
+              <img src="https://fsprojects.github.io/FSharp.Data/content/img/github-blue.png" class="hover"/>
+            </a>
+            
+          </p>
+        </td>
+      </tr>
+      <tr>
+        <td class="fsdocs-entity-name">
+          <p>
+            <a name="HtmlAttribute">
+              <a href="https://fsprojects.github.io/FSharp.Data/reference/fsharp-data-htmlattributemodule.html">
+                HtmlAttribute (Module)
+              </a>
+            </a>
+          </p>
+        </td>
+        <td class="fsdocs-xmldoc">
+          <p>
+            <a href="https://github.com/fsprojects/FSharp.Data/tree/master/src/Html/HtmlOperations.fs#L17-17" class="fsdocs-source-link">
+              <img src="https://fsprojects.github.io/FSharp.Data/content/img/github.png" class="normal"/>
+              <img src="https://fsprojects.github.io/FSharp.Data/content/img/github-blue.png" class="hover"/>
+            </a>
+            
+ Module with operations on HTML attributes
+
+          </p>
+        </td>
+      </tr>
+      <tr>
+        <td class="fsdocs-entity-name">
+          <p>
+            <a name="HtmlAttribute">
+              <a href="https://fsprojects.github.io/FSharp.Data/reference/fsharp-data-htmlattribute.html">
+                HtmlAttribute (Type)
+              </a>
+            </a>
+          </p>
+        </td>
+        <td class="fsdocs-xmldoc">
+          <p>
+            <a href="https://github.com/fsprojects/FSharp.Data/tree/master/src/Html/HtmlParser.fs#L21-21" class="fsdocs-source-link">
+              <img src="https://fsprojects.github.io/FSharp.Data/content/img/github.png" class="normal"/>
+              <img src="https://fsprojects.github.io/FSharp.Data/content/img/github-blue.png" class="hover"/>
+            </a>
+            Represents an HTML attribute. The name is always normalized to lowercase
+          </p>
+        </td>
+      </tr>
+      <tr>
+        <td class="fsdocs-entity-name">
+          <p>
+            <a name="HtmlAttributeExtensions">
+              <a href="https://fsprojects.github.io/FSharp.Data/reference/fsharp-data-htmlattributeextensions.html">
+                HtmlAttributeExtensions
+              </a>
+            </a>
+          </p>
+        </td>
+        <td class="fsdocs-xmldoc">
+          <p>
+            <a href="https://github.com/fsprojects/FSharp.Data/tree/master/src/Html/HtmlOperations.fs#L33-33" class="fsdocs-source-link">
+              <img src="https://fsprojects.github.io/FSharp.Data/content/img/github.png" class="normal"/>
+              <img src="https://fsprojects.github.io/FSharp.Data/content/img/github-blue.png" class="hover"/>
+            </a>
+            
+ Extension methods with operations on HTML attributes
+
+          </p>
+        </td>
+      </tr>
+      <tr>
+        <td class="fsdocs-entity-name">
+          <p>
+            <a name="HtmlDocument">
+              <a href="https://fsprojects.github.io/FSharp.Data/reference/fsharp-data-htmldocumentmodule.html">
+                HtmlDocument (Module)
+              </a>
+            </a>
+          </p>
+        </td>
+        <td class="fsdocs-xmldoc">
+          <p>
+            <a href="https://github.com/fsprojects/FSharp.Data/tree/master/src/Html/HtmlOperations.fs#L786-786" class="fsdocs-source-link">
+              <img src="https://fsprojects.github.io/FSharp.Data/content/img/github.png" class="normal"/>
+              <img src="https://fsprojects.github.io/FSharp.Data/content/img/github-blue.png" class="hover"/>
+            </a>
+            
+ Module with operations on HTML documents
+
+          </p>
+        </td>
+      </tr>
+      <tr>
+        <td class="fsdocs-entity-name">
+          <p>
+            <a name="HtmlDocument">
+              <a href="https://fsprojects.github.io/FSharp.Data/reference/fsharp-data-htmldocument.html">
+                HtmlDocument (Type)
+              </a>
+            </a>
+          </p>
+        </td>
+        <td class="fsdocs-xmldoc">
+          <p>
+            <a href="https://github.com/fsprojects/FSharp.Data/tree/master/src/Html/HtmlParser.fs#L161-161" class="fsdocs-source-link">
+              <img src="https://fsprojects.github.io/FSharp.Data/content/img/github.png" class="normal"/>
+              <img src="https://fsprojects.github.io/FSharp.Data/content/img/github-blue.png" class="hover"/>
+            </a>
+            
+ Represents an HTML document
+
+          </p>
+        </td>
+      </tr>
+      <tr>
+        <td class="fsdocs-entity-name">
+          <p>
+            <a name="HtmlDocumentExtensions">
+              <a href="https://fsprojects.github.io/FSharp.Data/reference/fsharp-data-htmldocumentextensions.html">
+                HtmlDocumentExtensions
+              </a>
+            </a>
+          </p>
+        </td>
+        <td class="fsdocs-xmldoc">
+          <p>
+            <a href="https://github.com/fsprojects/FSharp.Data/tree/master/src/Html/HtmlOperations.fs#L877-877" class="fsdocs-source-link">
+              <img src="https://fsprojects.github.io/FSharp.Data/content/img/github.png" class="normal"/>
+              <img src="https://fsprojects.github.io/FSharp.Data/content/img/github-blue.png" class="hover"/>
+            </a>
+            
+ Extension methods with operations on HTML documents
+
+          </p>
+        </td>
+      </tr>
+      <tr>
+        <td class="fsdocs-entity-name">
+          <p>
+            <a name="HtmlExtensions">
+              <a href="https://fsprojects.github.io/FSharp.Data/reference/fsharp-data-htmlextensionsmodule.html">
+                HtmlExtensions
+              </a>
+            </a>
+          </p>
+        </td>
+        <td class="fsdocs-xmldoc">
+          <p>
+            <a href="https://github.com/fsprojects/FSharp.Data/tree/master/src/Html/HtmlOperations.fs#L1045-1045" class="fsdocs-source-link">
+              <img src="https://fsprojects.github.io/FSharp.Data/content/img/github.png" class="normal"/>
+              <img src="https://fsprojects.github.io/FSharp.Data/content/img/github-blue.png" class="hover"/>
+            </a>
+            
+ Provides the dynamic operator for getting attribute values from HTML elements
+
+          </p>
+        </td>
+      </tr>
+      <tr>
+        <td class="fsdocs-entity-name">
+          <p>
+            <a name="HtmlNode">
+              <a href="https://fsprojects.github.io/FSharp.Data/reference/fsharp-data-htmlnodemodule.html">
+                HtmlNode (Module)
+              </a>
+            </a>
+          </p>
+        </td>
+        <td class="fsdocs-xmldoc">
+          <p>
+            <a href="https://github.com/fsprojects/FSharp.Data/tree/master/src/Html/HtmlOperations.fs#L49-49" class="fsdocs-source-link">
+              <img src="https://fsprojects.github.io/FSharp.Data/content/img/github.png" class="normal"/>
+              <img src="https://fsprojects.github.io/FSharp.Data/content/img/github-blue.png" class="hover"/>
+            </a>
+            
+ Module with operations on HTML nodes
+
+          </p>
+        </td>
+      </tr>
+      <tr>
+        <td class="fsdocs-entity-name">
+          <p>
+            <a name="HtmlNode">
+              <a href="https://fsprojects.github.io/FSharp.Data/reference/fsharp-data-htmlnode.html">
+                HtmlNode (Type)
+              </a>
+            </a>
+          </p>
+        </td>
+        <td class="fsdocs-xmldoc">
+          <p>
+            <a href="https://github.com/fsprojects/FSharp.Data/tree/master/src/Html/HtmlParser.fs#L35-35" class="fsdocs-source-link">
+              <img src="https://fsprojects.github.io/FSharp.Data/content/img/github.png" class="normal"/>
+              <img src="https://fsprojects.github.io/FSharp.Data/content/img/github-blue.png" class="hover"/>
+            </a>
+            
+ Represents an HTML node. The names of elements are always normalized to lowercase
+
+          </p>
+        </td>
+      </tr>
+      <tr>
+        <td class="fsdocs-entity-name">
+          <p>
+            <a name="HtmlNodeExtensions">
+              <a href="https://fsprojects.github.io/FSharp.Data/reference/fsharp-data-htmlnodeextensions.html">
+                HtmlNodeExtensions
+              </a>
+            </a>
+          </p>
+        </td>
+        <td class="fsdocs-xmldoc">
+          <p>
+            <a href="https://github.com/fsprojects/FSharp.Data/tree/master/src/Html/HtmlOperations.fs#L445-445" class="fsdocs-source-link">
+              <img src="https://fsprojects.github.io/FSharp.Data/content/img/github.png" class="normal"/>
+              <img src="https://fsprojects.github.io/FSharp.Data/content/img/github-blue.png" class="hover"/>
+            </a>
+            
+ Extension methods with operations on HTML nodes
+
+          </p>
+        </td>
+      </tr>
+      <tr>
+        <td class="fsdocs-entity-name">
+          <p>
+            <a name="HtmlProvider">
+              <a href="https://fsprojects.github.io/FSharp.Data/reference/fsharp-data-htmlprovider.html">
+                HtmlProvider
+              </a>
+            </a>
+          </p>
+        </td>
+        <td class="fsdocs-xmldoc">
+          <p>
+            <a href="https://github.com/fsprojects/FSharp.Data/tree/master/startup#L1-1" class="fsdocs-source-link">
+              <img src="https://fsprojects.github.io/FSharp.Data/content/img/github.png" class="normal"/>
+              <img src="https://fsprojects.github.io/FSharp.Data/content/img/github-blue.png" class="hover"/>
+            </a>
+            Typed representation of an HTML file.
+          </p>
+        </td>
+      </tr>
+      <tr>
+        <td class="fsdocs-entity-name">
+          <p>
+            <a name="Http">
+              <a href="https://fsprojects.github.io/FSharp.Data/reference/fsharp-data-http.html">
+                Http
+              </a>
+            </a>
+          </p>
+        </td>
+        <td class="fsdocs-xmldoc">
+          <p>
+            <a href="https://github.com/fsprojects/FSharp.Data/tree/master/src/Net/Http.fs#L1670-1670" class="fsdocs-source-link">
+              <img src="https://fsprojects.github.io/FSharp.Data/content/img/github.png" class="normal"/>
+              <img src="https://fsprojects.github.io/FSharp.Data/content/img/github-blue.png" class="hover"/>
+            </a>
+            
+ Utilities for working with network via HTTP. Includes methods for downloading
+ resources with specified headers, query parameters and HTTP body
+
+          </p>
+        </td>
+      </tr>
+      <tr>
+        <td class="fsdocs-entity-name">
+          <p>
+            <a name="HttpContentTypes">
+              <a href="https://fsprojects.github.io/FSharp.Data/reference/fsharp-data-httpcontenttypes.html">
+                HttpContentTypes
+              </a>
+            </a>
+          </p>
+        </td>
+        <td class="fsdocs-xmldoc">
+          <p>
+            <a href="https://github.com/fsprojects/FSharp.Data/tree/master/src/Net/Http.fs#L560-560" class="fsdocs-source-link">
+              <img src="https://fsprojects.github.io/FSharp.Data/content/img/github.png" class="normal"/>
+              <img src="https://fsprojects.github.io/FSharp.Data/content/img/github-blue.png" class="hover"/>
+            </a>
+            
+ Constants for common HTTP content types
+
+          </p>
+        </td>
+      </tr>
+      <tr>
+        <td class="fsdocs-entity-name">
+          <p>
+            <a name="HttpEncodings">
+              <a href="https://fsprojects.github.io/FSharp.Data/reference/fsharp-data-httpencodings.html">
+                HttpEncodings
+              </a>
+            </a>
+          </p>
+        </td>
+        <td class="fsdocs-xmldoc">
+          <p>
+            <a href="https://github.com/fsprojects/FSharp.Data/tree/master/src/Net/Http.fs#L1225-1225" class="fsdocs-source-link">
+              <img src="https://fsprojects.github.io/FSharp.Data/content/img/github.png" class="normal"/>
+              <img src="https://fsprojects.github.io/FSharp.Data/content/img/github-blue.png" class="hover"/>
+            </a>
+            
+ Constants for common HTTP encodings
+
+          </p>
+        </td>
+      </tr>
+      <tr>
+        <td class="fsdocs-entity-name">
+          <p>
+            <a name="HttpMethod">
+              <a href="https://fsprojects.github.io/FSharp.Data/reference/fsharp-data-httpmethod.html">
+                HttpMethod
+              </a>
+            </a>
+          </p>
+        </td>
+        <td class="fsdocs-xmldoc">
+          <p>
+            <a href="https://github.com/fsprojects/FSharp.Data/tree/master/src/Net/Http.fs#L19-19" class="fsdocs-source-link">
+              <img src="https://fsprojects.github.io/FSharp.Data/content/img/github.png" class="normal"/>
+              <img src="https://fsprojects.github.io/FSharp.Data/content/img/github-blue.png" class="hover"/>
+            </a>
+            
+ The method to use in an HTTP request
+
+          </p>
+        </td>
+      </tr>
+      <tr>
+        <td class="fsdocs-entity-name">
+          <p>
+            <a name="HttpRequestBody">
+              <a href="https://fsprojects.github.io/FSharp.Data/reference/fsharp-data-httprequestbody.html">
+                HttpRequestBody
+              </a>
+            </a>
+          </p>
+        </td>
+        <td class="fsdocs-xmldoc">
+          <p>
+            <a href="https://github.com/fsprojects/FSharp.Data/tree/master/src/Net/Http.fs#L525-525" class="fsdocs-source-link">
+              <img src="https://fsprojects.github.io/FSharp.Data/content/img/github.png" class="normal"/>
+              <img src="https://fsprojects.github.io/FSharp.Data/content/img/github-blue.png" class="hover"/>
+            </a>
+            
+ The body to send in an HTTP request
+
+          </p>
+        </td>
+      </tr>
+      <tr>
+        <td class="fsdocs-entity-name">
+          <p>
+            <a name="HttpRequestHeaders">
+              <a href="https://fsprojects.github.io/FSharp.Data/reference/fsharp-data-httprequestheaders.html">
+                HttpRequestHeaders
+              </a>
+            </a>
+          </p>
+        </td>
+        <td class="fsdocs-xmldoc">
+          <p>
+            <a href="https://github.com/fsprojects/FSharp.Data/tree/master/src/Net/Http.fs#L77-77" class="fsdocs-source-link">
+              <img src="https://fsprojects.github.io/FSharp.Data/content/img/github.png" class="normal"/>
+              <img src="https://fsprojects.github.io/FSharp.Data/content/img/github-blue.png" class="hover"/>
+            </a>
+            
+ Headers that can be sent in an HTTP request
+
+          </p>
+        </td>
+      </tr>
+      <tr>
+        <td class="fsdocs-entity-name">
+          <p>
+            <a name="HttpResponse">
+              <a href="https://fsprojects.github.io/FSharp.Data/reference/fsharp-data-httpresponse.html">
+                HttpResponse
+              </a>
+            </a>
+          </p>
+        </td>
+        <td class="fsdocs-xmldoc">
+          <p>
+            <a href="https://github.com/fsprojects/FSharp.Data/tree/master/src/Net/Http.fs#L542-542" class="fsdocs-source-link">
+              <img src="https://fsprojects.github.io/FSharp.Data/content/img/github.png" class="normal"/>
+              <img src="https://fsprojects.github.io/FSharp.Data/content/img/github-blue.png" class="hover"/>
+            </a>
+            
+ The response returned by an HTTP request
+
+          </p>
+        </td>
+      </tr>
+      <tr>
+        <td class="fsdocs-entity-name">
+          <p>
+            <a name="HttpResponseBody">
+              <a href="https://fsprojects.github.io/FSharp.Data/reference/fsharp-data-httpresponsebody.html">
+                HttpResponseBody
+              </a>
+            </a>
+          </p>
+        </td>
+        <td class="fsdocs-xmldoc">
+          <p>
+            <a href="https://github.com/fsprojects/FSharp.Data/tree/master/src/Net/Http.fs#L537-537" class="fsdocs-source-link">
+              <img src="https://fsprojects.github.io/FSharp.Data/content/img/github.png" class="normal"/>
+              <img src="https://fsprojects.github.io/FSharp.Data/content/img/github-blue.png" class="hover"/>
+            </a>
+            
+ The response body returned by an HTTP request
+
+          </p>
+        </td>
+      </tr>
+      <tr>
+        <td class="fsdocs-entity-name">
+          <p>
+            <a name="HttpResponseHeaders">
+              <a href="https://fsprojects.github.io/FSharp.Data/reference/fsharp-data-httpresponseheaders.html">
+                HttpResponseHeaders
+              </a>
+            </a>
+          </p>
+        </td>
+        <td class="fsdocs-xmldoc">
+          <p>
+            <a href="https://github.com/fsprojects/FSharp.Data/tree/master/src/Net/Http.fs#L228-228" class="fsdocs-source-link">
+              <img src="https://fsprojects.github.io/FSharp.Data/content/img/github.png" class="normal"/>
+              <img src="https://fsprojects.github.io/FSharp.Data/content/img/github-blue.png" class="hover"/>
+            </a>
+            
+ Headers that can be received in an HTTP response
+
+          </p>
+        </td>
+      </tr>
+      <tr>
+        <td class="fsdocs-entity-name">
+          <p>
+            <a name="HttpResponseWithStream">
+              <a href="https://fsprojects.github.io/FSharp.Data/reference/fsharp-data-httpresponsewithstream.html">
+                HttpResponseWithStream
+              </a>
+            </a>
+          </p>
+        </td>
+        <td class="fsdocs-xmldoc">
+          <p>
+            <a href="https://github.com/fsprojects/FSharp.Data/tree/master/src/Net/Http.fs#L551-551" class="fsdocs-source-link">
+              <img src="https://fsprojects.github.io/FSharp.Data/content/img/github.png" class="normal"/>
+              <img src="https://fsprojects.github.io/FSharp.Data/content/img/github-blue.png" class="hover"/>
+            </a>
+            
+ The response returned by an HTTP request with direct access to the response stream
+
+          </p>
+        </td>
+      </tr>
+      <tr>
+        <td class="fsdocs-entity-name">
+          <p>
+            <a name="HttpStatusCodes">
+              <a href="https://fsprojects.github.io/FSharp.Data/reference/fsharp-data-httpstatuscodes.html">
+                HttpStatusCodes
+              </a>
+            </a>
+          </p>
+        </td>
+        <td class="fsdocs-xmldoc">
+          <p>
+            <a href="https://github.com/fsprojects/FSharp.Data/tree/master/src/Net/Http.fs#L336-336" class="fsdocs-source-link">
+              <img src="https://fsprojects.github.io/FSharp.Data/content/img/github.png" class="normal"/>
+              <img src="https://fsprojects.github.io/FSharp.Data/content/img/github-blue.png" class="hover"/>
+            </a>
+            
+ Status codes that can be received in an HTTP response
+
+          </p>
+        </td>
+      </tr>
+      <tr>
+        <td class="fsdocs-entity-name">
+          <p>
+            <a name="JsonExtensions">
+              <a href="https://fsprojects.github.io/FSharp.Data/reference/fsharp-data-jsonextensionsmodule.html">
+                JsonExtensions (Module)
+              </a>
+            </a>
+          </p>
+        </td>
+        <td class="fsdocs-xmldoc">
+          <p>
+            <a href="https://github.com/fsprojects/FSharp.Data/tree/master/src/Json/JsonExtensions.fs#L157-157" class="fsdocs-source-link">
+              <img src="https://fsprojects.github.io/FSharp.Data/content/img/github.png" class="normal"/>
+              <img src="https://fsprojects.github.io/FSharp.Data/content/img/github-blue.png" class="hover"/>
+            </a>
+            
+ Provides the dynamic operator for getting a property of a JSON object
+
+          </p>
+        </td>
+      </tr>
+      <tr>
+        <td class="fsdocs-entity-name">
+          <p>
+            <a name="JsonExtensions">
+              <a href="https://fsprojects.github.io/FSharp.Data/reference/fsharp-data-jsonextensions.html">
+                JsonExtensions (Type)
+              </a>
+            </a>
+          </p>
+        </td>
+        <td class="fsdocs-xmldoc">
+          <p>
+            <a href="https://github.com/fsprojects/FSharp.Data/tree/master/src/Json/JsonExtensions.fs#L16-16" class="fsdocs-source-link">
+              <img src="https://fsprojects.github.io/FSharp.Data/content/img/github.png" class="normal"/>
+              <img src="https://fsprojects.github.io/FSharp.Data/content/img/github-blue.png" class="hover"/>
+            </a>
+            
+ Extension methods with operations on JSON values
+
+          </p>
+        </td>
+      </tr>
+      <tr>
+        <td class="fsdocs-entity-name">
+          <p>
+            <a name="JsonProvider">
+              <a href="https://fsprojects.github.io/FSharp.Data/reference/fsharp-data-jsonprovider.html">
+                JsonProvider
+              </a>
+            </a>
+          </p>
+        </td>
+        <td class="fsdocs-xmldoc">
+          <p>
+            <a href="https://github.com/fsprojects/FSharp.Data/tree/master/startup#L1-1" class="fsdocs-source-link">
+              <img src="https://fsprojects.github.io/FSharp.Data/content/img/github.png" class="normal"/>
+              <img src="https://fsprojects.github.io/FSharp.Data/content/img/github-blue.png" class="hover"/>
+            </a>
+            Typed representation of a JSON document.
+          </p>
+        </td>
+      </tr>
+      <tr>
+        <td class="fsdocs-entity-name">
+          <p>
+            <a name="JsonSaveOptions">
+              <a href="https://fsprojects.github.io/FSharp.Data/reference/fsharp-data-jsonsaveoptions.html">
+                JsonSaveOptions
+              </a>
+            </a>
+          </p>
+        </td>
+        <td class="fsdocs-xmldoc">
+          <p>
+            <a href="https://github.com/fsprojects/FSharp.Data/tree/master/src/Json/JsonValue.fs#L22-22" class="fsdocs-source-link">
+              <img src="https://fsprojects.github.io/FSharp.Data/content/img/github.png" class="normal"/>
+              <img src="https://fsprojects.github.io/FSharp.Data/content/img/github-blue.png" class="hover"/>
+            </a>
+            
+ Specifies the formatting behaviour of JSON values
+
+          </p>
+        </td>
+      </tr>
+      <tr>
+        <td class="fsdocs-entity-name">
+          <p>
+            <a name="JsonValue">
+              <a href="https://fsprojects.github.io/FSharp.Data/reference/fsharp-data-jsonvaluemodule.html">
+                JsonValue (Module)
+              </a>
+            </a>
+          </p>
+        </td>
+        <td class="fsdocs-xmldoc">
+          <p>
+            <a href="https://github.com/fsprojects/FSharp.Data/tree/master/src/Json/JsonValue.fs#L129-129" class="fsdocs-source-link">
+              <img src="https://fsprojects.github.io/FSharp.Data/content/img/github.png" class="normal"/>
+              <img src="https://fsprojects.github.io/FSharp.Data/content/img/github-blue.png" class="hover"/>
+            </a>
+            
+          </p>
+        </td>
+      </tr>
+      <tr>
+        <td class="fsdocs-entity-name">
+          <p>
+            <a name="JsonValue">
+              <a href="https://fsprojects.github.io/FSharp.Data/reference/fsharp-data-jsonvalue.html">
+                JsonValue (Type)
+              </a>
+            </a>
+          </p>
+        </td>
+        <td class="fsdocs-xmldoc">
+          <p>
+            <a href="https://github.com/fsprojects/FSharp.Data/tree/master/src/Json/JsonValue.fs#L34-34" class="fsdocs-source-link">
+              <img src="https://fsprojects.github.io/FSharp.Data/content/img/github.png" class="normal"/>
+              <img src="https://fsprojects.github.io/FSharp.Data/content/img/github-blue.png" class="hover"/>
+            </a>
+            
+ Represents a JSON value. Large numbers that do not fit in the
+ Decimal type are represented using the Float case, while
+ smaller numbers are represented as decimals to avoid precision loss.
+
+          </p>
+        </td>
+      </tr>
+      <tr>
+        <td class="fsdocs-entity-name">
+          <p>
+            <a name="MimeTypes">
+              <a href="https://fsprojects.github.io/FSharp.Data/reference/fsharp-data-mimetypes.html">
+                MimeTypes
+              </a>
+            </a>
+          </p>
+        </td>
+        <td class="fsdocs-xmldoc">
+          <p>
+            <a href="https://github.com/fsprojects/FSharp.Data/tree/master/src/Net/Http.fs#L618-618" class="fsdocs-source-link">
+              <img src="https://fsprojects.github.io/FSharp.Data/content/img/github.png" class="normal"/>
+              <img src="https://fsprojects.github.io/FSharp.Data/content/img/github-blue.png" class="hover"/>
+            </a>
+            
+          </p>
+        </td>
+      </tr>
+      <tr>
+        <td class="fsdocs-entity-name">
+          <p>
+            <a name="MultipartItem">
+              <a href="https://fsprojects.github.io/FSharp.Data/reference/fsharp-data-multipartitem.html">
+                MultipartItem
+              </a>
+            </a>
+          </p>
+        </td>
+        <td class="fsdocs-xmldoc">
+          <p>
+            <a href="https://github.com/fsprojects/FSharp.Data/tree/master/src/Net/Http.fs#L522-522" class="fsdocs-source-link">
+              <img src="https://fsprojects.github.io/FSharp.Data/content/img/github.png" class="normal"/>
+              <img src="https://fsprojects.github.io/FSharp.Data/content/img/github-blue.png" class="hover"/>
+            </a>
+            
+          </p>
+        </td>
+      </tr>
+      <tr>
+        <td class="fsdocs-entity-name">
+          <p>
+            <a name="StringExtensions">
+              <a href="https://fsprojects.github.io/FSharp.Data/reference/fsharp-data-stringextensions.html">
+                StringExtensions
+              </a>
+            </a>
+          </p>
+        </td>
+        <td class="fsdocs-xmldoc">
+          <p>
+            <a href="https://github.com/fsprojects/FSharp.Data/tree/master/src/Csv/CsvExtensions.fs#L14-14" class="fsdocs-source-link">
+              <img src="https://fsprojects.github.io/FSharp.Data/content/img/github.png" class="normal"/>
+              <img src="https://fsprojects.github.io/FSharp.Data/content/img/github-blue.png" class="hover"/>
+            </a>
+            
+ Extension methods with conversions from strings to other types
+
+          </p>
+        </td>
+      </tr>
+      <tr>
+        <td class="fsdocs-entity-name">
+          <p>
+            <a name="TextConversions">
+              <a href="https://fsprojects.github.io/FSharp.Data/reference/fsharp-data-textconversions.html">
+                TextConversions
+              </a>
+            </a>
+          </p>
+        </td>
+        <td class="fsdocs-xmldoc">
+          <p>
+            <a href="https://github.com/fsprojects/FSharp.Data/tree/master/src/CommonRuntime/TextConversions.fs#L40-40" class="fsdocs-source-link">
+              <img src="https://fsprojects.github.io/FSharp.Data/content/img/github.png" class="normal"/>
+              <img src="https://fsprojects.github.io/FSharp.Data/content/img/github-blue.png" class="hover"/>
+            </a>
+            
+ Conversions from string to string/int/int64/decimal/float/boolean/datetime/timespan/guid options
+
+          </p>
+        </td>
+      </tr>
+      <tr>
+        <td class="fsdocs-entity-name">
+          <p>
+            <a name="WorldBankData">
+              <a href="https://fsprojects.github.io/FSharp.Data/reference/fsharp-data-worldbankdata.html">
+                WorldBankData
+              </a>
+            </a>
+          </p>
+        </td>
+        <td class="fsdocs-xmldoc">
+          <p>
+            <a href="https://github.com/fsprojects/FSharp.Data/tree/master/startup#L1-1" class="fsdocs-source-link">
+              <img src="https://fsprojects.github.io/FSharp.Data/content/img/github.png" class="normal"/>
+              <img src="https://fsprojects.github.io/FSharp.Data/content/img/github-blue.png" class="hover"/>
+            </a>
+            
+          </p>
+        </td>
+      </tr>
+      <tr>
+        <td class="fsdocs-entity-name">
+          <p>
+            <a name="WorldBankDataProvider">
+              <a href="https://fsprojects.github.io/FSharp.Data/reference/fsharp-data-worldbankdataprovider.html">
+                WorldBankDataProvider
+              </a>
+            </a>
+          </p>
+        </td>
+        <td class="fsdocs-xmldoc">
+          <p>
+            <a href="https://github.com/fsprojects/FSharp.Data/tree/master/startup#L1-1" class="fsdocs-source-link">
+              <img src="https://fsprojects.github.io/FSharp.Data/content/img/github.png" class="normal"/>
+              <img src="https://fsprojects.github.io/FSharp.Data/content/img/github-blue.png" class="hover"/>
+            </a>
+            Typed representation of WorldBank data with additional configuration parameters. See http://www.worldbank.org for terms and conditions.
+          </p>
+        </td>
+      </tr>
+      <tr>
+        <td class="fsdocs-entity-name">
+          <p>
+            <a name="XElementExtensions">
+              <a href="https://fsprojects.github.io/FSharp.Data/reference/fsharp-data-xelementextensions.html">
+                XElementExtensions
+              </a>
+            </a>
+          </p>
+        </td>
+        <td class="fsdocs-xmldoc">
+          <p>
+            <a href="https://github.com/fsprojects/FSharp.Data/tree/master/src/Xml/XmlRuntime.fs#L14-14" class="fsdocs-source-link">
+              <img src="https://fsprojects.github.io/FSharp.Data/content/img/github.png" class="normal"/>
+              <img src="https://fsprojects.github.io/FSharp.Data/content/img/github-blue.png" class="hover"/>
+            </a>
+            
+ Extension methods for XElement
+
+          </p>
+        </td>
+      </tr>
+      <tr>
+        <td class="fsdocs-entity-name">
+          <p>
+            <a name="XmlProvider">
+              <a href="https://fsprojects.github.io/FSharp.Data/reference/fsharp-data-xmlprovider.html">
+                XmlProvider
+              </a>
+            </a>
+          </p>
+        </td>
+        <td class="fsdocs-xmldoc">
+          <p>
+            <a href="https://github.com/fsprojects/FSharp.Data/tree/master/startup#L1-1" class="fsdocs-source-link">
+              <img src="https://fsprojects.github.io/FSharp.Data/content/img/github.png" class="normal"/>
+              <img src="https://fsprojects.github.io/FSharp.Data/content/img/github-blue.png" class="hover"/>
+            </a>
+            Typed representation of a XML file.
+          </p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+            
+        </div>
+
+        <!-- BEGIN SEARCH BOX: this adds support for the search box -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/JavaScript-autoComplete/1.0.4/auto-complete.css" />
+        <script type="text/javascript">var fsdocs_search_baseurl = 'https://fsprojects.github.io/FSharp.Data/';</script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.8/lunr.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/JavaScript-autoComplete/1.0.4/auto-complete.min.js"></script>
+        <script type="text/javascript" src="https://fsprojects.github.io/FSharp.Data/content/fsdocs-search.js"></script>
+        <!-- END SEARCH BOX: this adds support for the search box -->
+    </div>
+</body>
+
+</html>
+
